@@ -1,0 +1,64 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.docstates
+*.log
+*.vsidx
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio
+.vs/
+.vscode/
+*.vsidx
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+*.sln.iml
+
+# User-specific files
+*.rsuser
+*.userprefs
+
+# Playwright
+.playwright/
+playwright/.auth/
+test-results/
+screenshots/
+
+# Environment files
+.env
+.env.local
+.env.production
+appsettings.Development.json
+appsettings.*.json
+!appsettings.json
+
+# Secrets
+secrets.json
+user-secrets/
+
+# OS
+.DS_Store
+Thumbs.db

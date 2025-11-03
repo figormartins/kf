@@ -1,0 +1,55 @@
+# Docker ignore file for KnightFight Bot
+# Prevents unnecessary files from being copied to Docker image
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Documentation (reduce image size)
+*.md
+!README.md
+
+# Data files (will be mounted as volumes)
+bot_data/
+bot_screenshots/
+
+# Deprecated files
+create_account_DEPRECATED.py
+
+# C# / .NET files (not needed for Python bot)
+src/
+*.sln
+*.csproj
+global.json
+
+# Test files
+tests/
+test_*.py
+*_test.py
+
+# Build artifacts
+build/
+dist/
+*.egg-info/

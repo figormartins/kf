@@ -1,0 +1,34 @@
+services:
+  knightfight-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: knightfight-bot
+    restart: unless-stopped
+    
+    # Mount volumes to persist data
+    volumes:
+      - ./bot_data:/app/bot_data
+      - ./bot_screenshots:/app/bot_screenshots
+    
+    # Environment variables (optional customization)
+    environment:
+      - PYTHONUNBUFFERED=1
+      - HEADLESS=true
+    
+    # Resource limits (adjust based on your needs)
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '2.0'
+    #       memory: 2G
+    #     reservations:
+    #       cpus: '0.5'
+    #       memory: 512M
+    
+    # Logging configuration
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
