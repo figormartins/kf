@@ -33,7 +33,7 @@ RUN apt-get update && apt-get install -y \
 
 
 # Copy requirements
-COPY bot/requirements.txt .
+COPY bot_battlefield/requirements.txt .
 
 
 # Install Python dependencies
