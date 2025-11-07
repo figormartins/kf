@@ -71,12 +71,12 @@ class KnightFightBot:
                 )
                 
                 # Capture final screenshot
-                final_screenshot_file = self.screenshot_manager.get_screenshot_path(
-                    "final_registration",
-                    timestamp
-                )
-                final_screenshot_path = self.screenshot_manager.capture(page, final_screenshot_file)
-                print(f"Final screenshot saved at: {final_screenshot_path}")
+                # final_screenshot_file = self.screenshot_manager.get_screenshot_path(
+                #     "final_registration",
+                #     timestamp
+                # )
+                # final_screenshot_path = self.screenshot_manager.capture(page, final_screenshot_file)
+                # print(f"Final screenshot saved at: {final_screenshot_path}")
                 
                 # Create session summary with simple success boolean
                 attack_result = {
@@ -86,7 +86,7 @@ class KnightFightBot:
                     'timestamp': datetime.now() if attack_success else None
                 }
                 session = BotSession(player=player, attack_result=attack_result)
-                session.add_screenshot(str(final_screenshot_path))
+                # session.add_screenshot(str(final_screenshot_path))
                 
                 # Keep browser open briefly to see results
                 page.wait_for_timeout(BotSettings.FINAL_WAIT)
@@ -161,6 +161,7 @@ def main():
             if session:
                 print(f"\n✅ Cycle #{cycle} completed successfully!")
                 bot.print_summary(session)
+                time.sleep(3360)
             else:
                 print(f"\n⚠️  Cycle #{cycle} failed - retrying in 30s...")
                 time.sleep(30)
