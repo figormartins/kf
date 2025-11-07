@@ -3,10 +3,12 @@ Configuration settings for KnightFight Bot
 """
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 
 
 class BotSettings:
     """Bot configuration settings"""
+    load_dotenv()
     # Login
     LOGIN_USERNAME = os.getenv('KF_LOGIN_USERNAME')
     LOGIN_PASSWORD = os.getenv('KF_LOGIN_PASSWORD')
