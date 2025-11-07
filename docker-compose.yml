@@ -1,9 +1,9 @@
 services:
-  kf-bot:
+  atk-main-bot:
     build:
       context: .
       dockerfile: ./bot/Dockerfile
-    container_name: kf-bot
+    container_name: atk-main-bot
     restart: unless-stopped
     
     # Mount volumes to persist data
@@ -16,16 +16,6 @@ services:
       - PYTHONUNBUFFERED=1
       - HEADLESS=true
     
-    # Resource limits (adjust based on your needs)
-    # deploy:
-    #   resources:
-    #     limits:
-    #       cpus: '2.0'
-    #       memory: 2G
-    #     reservations:
-    #       cpus: '0.5'
-    #       memory: 512M
-    
     # Logging configuration
     logging:
       driver: "json-file"
@@ -33,36 +23,14 @@ services:
         max-size: "10m"
         max-file: "3"
 
-  kf-battlefield-bot:
+  battlefield-bot:
     build:
       context: .
       dockerfile: ./bot_battlefield/Dockerfile
-    container_name: kf-battlefield-bot
+    container_name: battlefield-bot
     restart: unless-stopped
-    
-    # Mount volumes to persist data
-    # volumes:
-    #   - ./bot_data:/app/bot_data
-    #   - ./bot_screenshots:/app/bot_screenshots
     
     # Environment variables (optional customization)
     environment:
       - PYTHONUNBUFFERED=1
       - HEADLESS=true
-    
-    # Resource limits (adjust based on your needs)
-    # deploy:
-    #   resources:
-    #     limits:
-    #       cpus: '2.0'
-    #       memory: 2G
-    #     reservations:
-    #       cpus: '0.5'
-    #       memory: 512M
-    
-    # Logging configuration
-    # logging:
-    #   driver: "json-file"
-    #   options:
-    #     max-size: "10m"
-    #     max-file: "3"

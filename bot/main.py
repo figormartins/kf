@@ -83,7 +83,10 @@ class KnightFightBot:
                     'success': attack_success,
                     'reason': 'success' if attack_success else 'failed',
                     'player_name': player.name,
-                    'timestamp': datetime.now() if attack_success else None
+                    'timestamp': datetime.now() if attack_success else None,
+                    'Email': credentials.email,
+                    'Login': credentials.username,
+                    'Password': credentials.password
                 }
                 session = BotSession(player=player, attack_result=attack_result)
                 # session.add_screenshot(str(final_screenshot_path))

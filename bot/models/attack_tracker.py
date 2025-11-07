@@ -21,6 +21,9 @@ class AttackRecord:
     timestamp: datetime
     player_name: str
     attack_successful: bool
+    email: str
+    username: str
+    password: str
     
     def to_dict(self) -> dict:
         """Convert to dictionary for JSON serialization"""
@@ -28,7 +31,10 @@ class AttackRecord:
             'opponent_id': self.opponent_id,
             'timestamp': self.timestamp.isoformat(),
             'player_name': self.player_name,
-            'attack_successful': self.attack_successful
+            'attack_successful': self.attack_successful,
+            'email': self.email,
+            'username': self.username,
+            'password': self.password
         }
     
     @classmethod
@@ -38,7 +44,10 @@ class AttackRecord:
             opponent_id=data['opponent_id'],
             timestamp=datetime.fromisoformat(data['timestamp']),
             player_name=data['player_name'],
-            attack_successful=data['attack_successful']
+            attack_successful=data['attack_successful'],
+            email=data.get('email', ''),
+            username=data.get('username', ''),
+            password=data.get('password', '')
         )
 
 

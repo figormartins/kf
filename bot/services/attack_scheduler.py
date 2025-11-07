@@ -133,7 +133,10 @@ class AttackScheduler:
                     opponent_id=opponent_id,
                     timestamp=datetime.now(),
                     player_name=player.name,
-                    attack_successful=True
+                    attack_successful=True,
+                    email=player.credentials.email,
+                    username=player.credentials.username,
+                    password=player.credentials.password
                 )
                 self.tracker.record_attack(record)
                 

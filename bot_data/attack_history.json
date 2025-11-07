@@ -1,14 +1,11 @@
 [
   {
     "opponent_id": "522000820",
-    "timestamp": "2025-11-06T13:37:11.846915",
-    "player_name": "BaldwinWolfbane6222",
-    "attack_successful": true
-  },
-  {
-    "opponent_id": "522000820",
-    "timestamp": "2025-11-07T13:26:25.819019",
-    "player_name": "BedivereFlameheart21975",
-    "attack_successful": true
+    "timestamp": "2025-11-07T18:06:02.829795",
+    "player_name": "RagnarEarthshaker8700",
+    "attack_successful": true,
+    "email": "user_1762538688@example.com",
+    "username": "user_1762538688",
+    "password": "KnightFight2025!sLV10U5NeJwHtAIZ"
   }
 ]
