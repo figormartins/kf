@@ -61,14 +61,13 @@ class PlayerService:
 
     def find_zombies_and_attack(self) -> bool:
         """Find zombies on battlefield and attack them"""
-        print("Searching for zombies to attack...")
+        print("\n" + "=" * 90 + "\n" * 2 + "🔍 Searching for zombies to attack...")
         
         self.page.locator('form[name="enemysearch"] button').click()
         self.page.wait_for_load_state('networkidle')
         self.page.wait_for_timeout(BotSettings.DEFAULT_WAIT)
         enemies_locator = self.page.locator('div.fsbox')
         enemies = enemies_locator.all()
-        print("Iniciando análise do inimigo")
 
         for enemy in enemies:
             # Status
@@ -91,32 +90,33 @@ class PlayerService:
             fighting_ability = int(status[10].inner_text())
             parry = int(status[11].inner_text())
 
-            print("\n" + "=" * 60)
+            print("\n" + "=" * 90 + "\n")
             print(f"Zombie: {name}")
             print(f"Level: {lvl}, Eficiency: {eficiency}, Armor: {armor}, 1H Weapon: {one_hand_weapon}, 2H Weapon: {two_hand_weapon}")
             print(f"Status - Strength: {strength}, Stamina: {stamina}, Dexterity: {dexterity}, Fighting Ability: {fighting_ability}, Parry: {parry}")
             
             
             # Attack
-            if  stamina <= 48 and parry <= 48:
+            if  stamina <= 49 and parry <= 48:
                 enemy.locator('form .fsattackbut').click()
-                print("Ataque realizado com sucesso!")
                 return True
 
         return False
 
-    def wait_timer_if_needed(self) -> None:
-        """Wait if timer is active on battlefield"""
+    def wait_timer_if_needed(self) -> bool:
+        """Wait if timer is active on battlefield and return True if waited"""
         print("Waiting for active timer...")
         try:
             counter_locator = self.page.locator("#counter")
             count = counter_locator.count()
             if count == 0:
                 print("No active timer found. Continuing...")
-                return
+                return False
 
             timer_text = counter_locator.inner_text()
             print(f"Timer active: {timer_text}. Waiting...")
             expect(counter_locator).to_be_empty(timeout=BotSettings.NEXT_ATTACK_WAIT * 1000)
+            return True
         except Exception:
             print("No active timer found. Continuing...")
+            return False
