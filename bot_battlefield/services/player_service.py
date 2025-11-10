@@ -16,7 +16,6 @@ class PlayerService:
         """Navigate to login page"""
         print("Navigating to login page...")
         self.page.goto("https://moonid.net/account/login/?next=/api/account/connect/286/")
-        #self.page.goto("https://moonid.net/account/login/?next=/api/account/connect/238/") ## remover
     
     def __fill_login_form_and_submit_login(self) -> None:
         """Fill login form and submit"""
@@ -64,7 +63,6 @@ class PlayerService:
         """Find zombies on battlefield and attack them"""
         print("Searching for zombies to attack...")
         
-       # while True:
         self.page.locator('form[name="enemysearch"] button').click()
         self.page.wait_for_load_state('networkidle')
         self.page.wait_for_timeout(BotSettings.DEFAULT_WAIT)
@@ -73,19 +71,34 @@ class PlayerService:
         print("Iniciando análise do inimigo")
 
         for enemy in enemies:
-            #lvl = enemy.locator('.level').inner_text()
-
             # Status
-            status = enemy.locator('.sk4').all()
-            strength = int(status[0].inner_text())
-            stamina = int(status[1].inner_text())
-            dexterity = int(status[2].inner_text())
-            fighting_ability = int(status[3].inner_text())
-            parry = int(status[4].inner_text())
-            print(f"Status - Strength: {strength}, Stamina: {stamina}, Dexterity: {dexterity}, Fighting Ability: {fighting_ability}, Parry: {parry}")
+            status = enemy.locator('tr .fsval').all()
+            name = enemy.locator('.enemyname').inner_text()
 
+            # Base
+            lvl = int(status[0].inner_text())
+            eficiency = status[1].inner_text()[1:]
+            vitality = int(status[3].inner_text())
+
+            # Equipment
+            armor = int(status[4].inner_text())
+            one_hand_weapon = int(status[5].inner_text())
+            two_hand_weapon = int(status[6].inner_text())
+
+            strength = int(status[7].inner_text())
+            stamina = int(status[8].inner_text())
+            dexterity = int(status[9].inner_text())
+            fighting_ability = int(status[10].inner_text())
+            parry = int(status[11].inner_text())
+
+            print("\n" + "=" * 60)
+            print(f"Zombie: {name}")
+            print(f"Level: {lvl}, Eficiency: {eficiency}, Armor: {armor}, 1H Weapon: {one_hand_weapon}, 2H Weapon: {two_hand_weapon}")
+            print(f"Status - Strength: {strength}, Stamina: {stamina}, Dexterity: {dexterity}, Fighting Ability: {fighting_ability}, Parry: {parry}")
+            
+            
             # Attack
-            if  fighting_ability <= 12 or (parry < 30 and fighting_ability < 15):
+            if  stamina <= 48 and parry <= 48:
                 enemy.locator('form .fsattackbut').click()
                 print("Ataque realizado com sucesso!")
                 return True
