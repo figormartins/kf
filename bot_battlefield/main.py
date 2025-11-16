@@ -45,9 +45,7 @@ class KnightFightBot:
                         is_attack_performed = player_service.find_zombies_and_attack()
 
                         if is_attack_performed:
-                            print("\n" + f"⚔️ Attack performed at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-                            print("⏳ Waiting few minutos before next attack...")
-                            time.sleep(BotSettings.NEXT_ATTACK_WAIT)
+                            print("\n" + f"⚔️  Attack performed at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
                             break
                 except Exception as e:
                     print(f"⚠️ Error during battlefield operations: {e}")

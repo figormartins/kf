@@ -2,6 +2,8 @@
 Player service for managing player creation and naming
 """
 from datetime import datetime
+import random
+import re 
 from bot_battlefield.config.settings import BotSettings
 from playwright.sync_api import Page, expect
 
@@ -15,7 +17,8 @@ class PlayerService:
     def __navigate_to_login(self) -> None:
         """Navigate to login page"""
         print("Navigating to login page...")
-        self.page.goto("https://moonid.net/account/login/?next=/api/account/connect/286/")
+        #self.page.goto("https://moonid.net/account/login/?next=/api/account/connect/286/") # int
+        self.page.goto("https://moonid.net/account/login/?next=/api/account/connect/238/") # de
     
     def __fill_login_form_and_submit_login(self) -> None:
         """Fill login form and submit"""
@@ -56,18 +59,33 @@ class PlayerService:
     def go_to_battlefield(self) -> None:
         """Navigate to battlefield page"""
         print("Navigating to battlefield page...")
-        self.page.goto(BotSettings.BATTLE_SERVER_URL)
-        self.page.wait_for_load_state('networkidle')
+        self.page.wait_for_load_state('load')
+        if not "battleserver" in self.page.url:
+            print("With not in battleserver, navigating there...")
+            self.page.locator('#content > nav > ul:nth-child(2) > li:nth-child(2) > a').click()
+            self.page.wait_for_load_state('networkidle')
+        
+        expect(self.page).to_have_url(re.compile(".*battleserver"))
+        self.page.locator('#content > nav > ul:nth-child(1) > li:nth-child(2) > a').click()
+        self.page.wait_for_load_state('load')
+        self.page.wait_for_timeout(BotSettings.LONG_WAIT)
+        print("Loaded fight")
 
     def find_zombies_and_attack(self) -> bool:
         """Find zombies on battlefield and attack them"""
         print("\n" + "=" * 90 + "\n" * 2 + "🔍 Searching for zombies to attack...")
         
-        self.page.locator('form[name="enemysearch"] button').click()
-        self.page.wait_for_load_state('networkidle')
+        scroll_to_locator = "el => el.scrollIntoView({ behavior: 'smooth', block: 'center' })"
+        self.page.wait_for_timeout(BotSettings.QUICK_WAIT)
+        enemy_search_locator = self.page.locator('form[name="enemysearch"] button')
+        enemy_search_locator.evaluate(scroll_to_locator)
+        enemy_search_locator.click()
         self.page.wait_for_timeout(BotSettings.DEFAULT_WAIT)
+        
         enemies_locator = self.page.locator('div.fsbox')
         enemies = enemies_locator.all()
+        random_mod = 4 #random.randint(3, 4)
+        count = 1
 
         for enemy in enemies:
             # Status
@@ -94,13 +112,20 @@ class PlayerService:
             print(f"Zombie: {name}")
             print(f"Level: {lvl}, Eficiency: {eficiency}, Armor: {armor}, 1H Weapon: {one_hand_weapon}, 2H Weapon: {two_hand_weapon}")
             print(f"Status - Strength: {strength}, Stamina: {stamina}, Dexterity: {dexterity}, Fighting Ability: {fighting_ability}, Parry: {parry}")
-            
-            
-            # Attack
-            if  stamina <= 49 and parry <= 48:
-                enemy.locator('form .fsattackbut').click()
-                return True
 
+            # Attack
+            if  armor == 69 and one_hand_weapon == 0:
+                attack_btn_locator = enemy.locator('form .fsattackbut')
+                attack_btn_locator.evaluate(scroll_to_locator)
+                attack_btn_locator.click()
+                expect(self.page.locator('.batrep-grid3')).to_be_visible(timeout=BotSettings.LONG_WAIT)
+                return True
+            
+            if count % random_mod == 0:
+                enemy.evaluate(scroll_to_locator)
+                self.page.wait_for_timeout(random.randrange(BotSettings.DEFAULT_WAIT, BotSettings.LONG_WAIT))
+
+            count += 1
         return False
 
     def wait_timer_if_needed(self) -> bool:
