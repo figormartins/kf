@@ -59,6 +59,9 @@ class KnightFightBot:
                 # Step 2: Create and register player
                 player = player_service.create_player(credentials)
                 player_registered = player_service.register_player_name(player, timestamp)
+
+                # Step 2.1: Delete account
+                player_service.delete_account()
                 
                 # Step 3: Perform attack with cooldown management
                 print(f"\n{'='*50}")
@@ -69,14 +72,6 @@ class KnightFightBot:
                     player=player,
                     opponent_id=BotSettings.TARGET_OPPONENT_ID
                 )
-                
-                # Capture final screenshot
-                # final_screenshot_file = self.screenshot_manager.get_screenshot_path(
-                #     "final_registration",
-                #     timestamp
-                # )
-                # final_screenshot_path = self.screenshot_manager.capture(page, final_screenshot_file)
-                # print(f"Final screenshot saved at: {final_screenshot_path}")
                 
                 # Create session summary with simple success boolean
                 attack_result = {

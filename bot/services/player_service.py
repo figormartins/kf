@@ -89,3 +89,23 @@ class PlayerService:
         except Exception as e:
             print(f"⚠️ Error trying to fill name: {e}")
             return False
+
+    def delete_account(self) -> None:
+        """
+        Delete the current account
+        """
+        print("Continuing with account deletion process...")
+        
+        try:
+            # Navigate to account settings
+            self.page.goto(f"{BotSettings.BASE_URL}/profil/", timeout=BotSettings.NETWORK_IDLE_TIMEOUT, wait_until='networkidle')
+            self.page.wait_for_timeout(BotSettings.DEFAULT_WAIT)
+            
+            # Find and click delete account button/link
+            tr_locators = self.page.locator('#page > form > div > table > tbody > tr').all()[-2:]
+            checkbox = tr_locators[0].locator('.checkTTunchecked').click()
+            save_button = tr_locators[1].locator('button').click()
+            self.page.wait_for_timeout(BotSettings.LONG_WAIT)
+            print("✅ Account deletion process completed")
+        except Exception as e:
+            print(f"⚠️ Error during account deletion: {e}")

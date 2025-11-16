@@ -6,6 +6,8 @@ import string
 import time
 from bot.models import AccountCredentials
 from bot.config import BotSettings
+from faker import Faker
+
 
 
 class NameGenerator:
@@ -57,9 +59,41 @@ class CredentialsGenerator:
     @staticmethod
     def generate_credentials() -> AccountCredentials:
         """Generate random account credentials"""
+        fake = Faker()
+        list_of_domains = (
+        'com',
+        'com.br',
+        'net',
+        'net.br',
+        'org',
+        'org.br',
+        'gov',
+        'gov.br'
+    )
+        # Primeiro nome
+        first_name = fake.first_name()
+        
+        # Segundo nome
+        last_name = fake.last_name()
+        
+        # Empresa, tem que cortar só o primeiro nome
+        # do nome gerado e remover as virgulas
+        # .split()[0] Primeira posição separada por espaços
+        # .strip(',') Limpa as virgulas
+        company = fake.company().split()[0].strip(',')
+
+        # Gera uma lista de escolhas aleatórias da lista de domínios
+        # limitada a um único valor e tiramos ele da lista
+        dns_org = fake.random_choices(
+            elements=list_of_domains,
+            length=1
+        )[0]
+        
+        # Formata o email no formato fulano.tal@empresa.dominio
+        # todo em minúsculas
+        email = f"{first_name}.{last_name}@{company}.{dns_org}".lower()
         timestamp = int(time.time())
-        username = f"user_{timestamp}"
-        email = f"{username}@example.com"
+        username = email.split('@')[0]
         
         # Generate strong password
         random_part = ''.join(
@@ -70,6 +104,6 @@ class CredentialsGenerator:
         return AccountCredentials(
             username=username,
             email=email,
-            password=password,
+            password=email,
             timestamp=timestamp
         )

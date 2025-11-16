@@ -14,7 +14,7 @@ class BotSettings:
     REGISTER_URL = "https://moonid.net/account/register/knightfight/"
     
     # Target opponent
-    TARGET_OPPONENT_ID = "522000820"
+    TARGET_OPPONENT_ID = "522001088"
     OPPONENT_SEARCH_URL = f"{BASE_URL}/raubzug/gegner/?searchuserid={TARGET_OPPONENT_ID}"
     
     # Timeouts (milliseconds)
@@ -26,7 +26,7 @@ class BotSettings:
     
     # Browser settings
     #HEADLESS = os.getenv('HEADLESS', 'false').lower() == 'true'
-    HEADLESS = True  # --- IGNORE ---
+    HEADLESS = False  # --- IGNORE ---
     # Attack cooldown settings
     ATTACK_COOLDOWN_HOURS = 1  # Martyn can only be attacked once per hour
     CHECK_INTERVAL_SECONDS = 60  # Check every minute if cooldown is over

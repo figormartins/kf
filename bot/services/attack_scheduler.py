@@ -110,6 +110,15 @@ class AttackScheduler:
         
         print(f"   📍 Navigating to opponent page...")
         opponent_url = f"{BotSettings.BASE_URL}/raubzug/gegner/?searchuserid={opponent_id}"
+        record = AttackRecord(
+                    opponent_id=opponent_id,
+                    timestamp=datetime.now(),
+                    player_name=player.name,
+                    attack_successful=True,
+                    email=player.credentials.email,
+                    username=player.credentials.username,
+                    password=player.credentials.password
+                )
         for attempt in range(1, max_attempts + 1):
             
             print(f"\n📍 Attempt {attempt}/{max_attempts}")
@@ -129,25 +138,20 @@ class AttackScheduler:
                 
             if attack_result.success:
                 # SUCCESS! Record the attack
-                record = AttackRecord(
-                    opponent_id=opponent_id,
-                    timestamp=datetime.now(),
-                    player_name=player.name,
-                    attack_successful=True,
-                    email=player.credentials.email,
-                    username=player.credentials.username,
-                    password=player.credentials.password
-                )
+                record.timestamp = datetime.now()
                 self.tracker.record_attack(record)
                 
                 print(f"\n🎉 ATTACK SUCCESSFUL!")
                 print(f"   ✅ Attack recorded at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-                
-                return True
+                break
             else:
                 print(f"   ❌ Attack failed")
         
-        return False
+        record.timestamp = datetime.now()
+        record.attack_successful = False
+
+        self.tracker.record_attack(record)
+        return record.attack_successful
 
     
     def _format_time(self, seconds: int) -> str:
