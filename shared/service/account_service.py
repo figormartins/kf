@@ -9,8 +9,10 @@ from playwright.sync_api import Page, expect
 class AccountService:
     """Handle player login"""
     
-    def __init__(self, page: Page):
+    def __init__(self, page: Page, username: str, password: str):
         self.page = page
+        self.username = username
+        self.password = password
 
     def _navigate_to_login(self) -> None:
         """Navigate to login page"""
@@ -21,8 +23,8 @@ class AccountService:
         """Fill login form and submit"""
 
         print("Filling login form...")
-        self.page.locator('form .form input#id_username').fill(BotSettings.LOGIN_USERNAME)
-        self.page.locator('form .form input#id_password').fill(BotSettings.LOGIN_PASSWORD)
+        self.page.locator('form .form input#id_username').fill(self.username)
+        self.page.locator('form .form input#id_password').fill(self.password)
                 
         # Submit form
         print("Submitting login form...")
@@ -42,10 +44,32 @@ class AccountService:
         try:
             self._navigate_to_login()
             self._fill_login_form_and_submit_login()
+
+            if "https://moonid.net/account/login/" in self.page.url:
+                print("⚠️ Login failed - check credentials")
+                return False
             
             print("✅ Login successful")
             return True
                 
         except Exception as e:
             print(f"⚠️ Error on login: {e}")
+            return False
+        
+    def remove_account(self) -> bool:
+        """Remove the logged-in account"""
+        try:
+            print("Navigating to account removal page...")
+            self.page.goto("https://moonid.net/account/data/")
+            self.page.wait_for_load_state('networkidle')
+            
+            print("Submitting account removal form...")
+            self.page.locator('#id_confirmed').click()
+            self.page.locator('#content > div > div > div.subcolumn.right > div > div > form > table > tbody > tr:nth-child(2) > td:nth-child(2) > input').click()
+            self.page.wait_for_load_state('networkidle')
+            
+            print("✅ Account removal successful")
+            return True
+        except Exception as e:
+            print(f"⚠️ Error on account removal: {e}")
             return False

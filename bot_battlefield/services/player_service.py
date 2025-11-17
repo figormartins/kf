@@ -114,7 +114,9 @@ class PlayerService:
             print(f"Status - Strength: {strength}, Stamina: {stamina}, Dexterity: {dexterity}, Fighting Ability: {fighting_ability}, Parry: {parry}")
 
             # Attack
-            if  armor == 69 and one_hand_weapon == 0:
+            if  ((armor == 91 and one_hand_weapon == 23) or
+                 (armor == 48 and one_hand_weapon == 65 and
+                  (fighting_ability > 200 or stamina > 200 or dexterity > 200))) and parry <= 200:
                 attack_btn_locator = enemy.locator('form .fsattackbut')
                 attack_btn_locator.evaluate(scroll_to_locator)
                 attack_btn_locator.click()
