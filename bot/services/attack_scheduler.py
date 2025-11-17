@@ -136,21 +136,19 @@ class AttackScheduler:
                 print(f"   ⚠️ Navigation warning: {str(e)}")
                 continue
                 
+            record.timestamp = datetime.now()
             if attack_result.success:
                 # SUCCESS! Record the attack
-                record.timestamp = datetime.now()
-                self.tracker.record_attack(record)
-                
+                record.attack_successful = True
                 print(f"\n🎉 ATTACK SUCCESSFUL!")
-                print(f"   ✅ Attack recorded at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+                
                 break
             else:
                 print(f"   ❌ Attack failed")
-        
-        record.timestamp = datetime.now()
-        record.attack_successful = False
+                record.attack_successful = False
 
         self.tracker.record_attack(record)
+        print(f"   ✅ Attack recorded at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         return record.attack_successful
 
     
