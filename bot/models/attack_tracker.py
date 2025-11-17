@@ -8,7 +8,7 @@ Martyn can only receive one attack per hour, so we need to:
 3. Attack immediately when available (race against other bots)
 """
 from dataclasses import dataclass
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 import json
 from typing import Optional
@@ -81,6 +81,31 @@ class AttackTracker:
         # Return the most recent attack
         return max(opponent_attacks, key=lambda x: x.timestamp)
     
+    def get_attacks(self) -> list[AttackRecord]:
+        """Get attacks records for older than 24 hours"""
+        attacks = self._load_attacks()
+        opponent_attacks = [
+            AttackRecord.from_dict(a) 
+            for a in attacks
+        ]
+
+        if not opponent_attacks:
+            return []
+
+        now = datetime.now(timezone.utc).astimezone()
+        filtered_list = [
+            item for item in opponent_attacks
+            if now > (item.timestamp.replace(tzinfo=timezone.utc).astimezone() + timedelta(hours=24))
+        ]
+
+        return filtered_list
+    
+    def remove_attack(self, email: str):
+        """Remove attack records for a given email"""
+        attacks = self._load_attacks()
+        filtered_attacks = [a for a in attacks if a.get('email') != email]
+        self._save_attacks(filtered_attacks)
+
     def can_attack(self, opponent_id: str) -> tuple[bool, Optional[datetime], Optional[str]]:
         """
         Check if opponent can be attacked
