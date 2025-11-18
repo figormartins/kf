@@ -13,12 +13,13 @@ class BotSettings:
     LOGIN_USERNAME = os.getenv('KF_LOGIN_USERNAME')
     LOGIN_PASSWORD = os.getenv('KF_LOGIN_PASSWORD')
     # URLs
-    BASE_URL = "https://int7.knightfight.moonid.net"
+    #BASE_URL = "https://int7.knightfight.moonid.net"
+    BASE_URL = "https://de15.knightfight.moonid.net"
     BATTLE_SERVER_URL = f"{BASE_URL}/battleserver/raubzug/"
     REGISTER_URL = "https://moonid.net/account/register/knightfight/"
     
     # Target opponent
-    TARGET_OPPONENT_ID = "522000820"
+    TARGET_OPPONENT_ID = "522001088"
     OPPONENT_SEARCH_URL = f"{BASE_URL}/raubzug/gegner/?searchuserid={TARGET_OPPONENT_ID}"
     
     # Timeouts (milliseconds)
@@ -27,9 +28,10 @@ class BotSettings:
     DEFAULT_WAIT = 1000
     LONG_WAIT = 3000
     FINAL_WAIT = 10000
+    QUICK_WAIT = 300
 
     # Timeouts (seconds)
-    NEXT_ATTACK_WAIT = 300
+    NEXT_ATTACK_WAIT = 600
     
     # Browser settings
     #HEADLESS = os.getenv('HEADLESS', 'false').lower() == 'true'
