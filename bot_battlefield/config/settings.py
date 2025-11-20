@@ -9,14 +9,15 @@ from dotenv import load_dotenv
 class BotSettings:
     """Bot configuration settings"""
     load_dotenv()
+    IS_INT_SERVER = os.getenv('KF_IS_INT_SERVER', 'true').lower() == 'true'
     # Login
     LOGIN_USERNAME = os.getenv('KF_LOGIN_USERNAME')
     LOGIN_PASSWORD = os.getenv('KF_LOGIN_PASSWORD')
     # URLs
-    #BASE_URL = "https://int7.knightfight.moonid.net"
-    BASE_URL = "https://de15.knightfight.moonid.net"
+    BASE_URL = "https://int7.knightfight.moonid.net" if IS_INT_SERVER else "https://de15.knightfight.moonid.net"
     BATTLE_SERVER_URL = f"{BASE_URL}/battleserver/raubzug/"
     REGISTER_URL = "https://moonid.net/account/register/knightfight/"
+    LOGIN_URL = "https://moonid.net/account/login/?next=/api/account/connect/286/" if IS_INT_SERVER else "https://moonid.net/account/login/?next=/api/account/connect/238/"
     
     # Target opponent
     TARGET_OPPONENT_ID = "522001088"
@@ -35,7 +36,7 @@ class BotSettings:
     
     # Browser settings
     #HEADLESS = os.getenv('HEADLESS', 'false').lower() == 'true'
-    HEADLESS = True  # --- IGNORE ---
+    HEADLESS = False  # --- IGNORE ---
     # Attack cooldown settings
     ATTACK_COOLDOWN_HOURS = 1  # Martyn can only be attacked once per hour
     CHECK_INTERVAL_SECONDS = 60  # Check every minute if cooldown is over

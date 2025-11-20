@@ -17,8 +17,7 @@ class PlayerService:
     def __navigate_to_login(self) -> None:
         """Navigate to login page"""
         print("Navigating to login page...")
-        #self.page.goto("https://moonid.net/account/login/?next=/api/account/connect/286/") # int
-        self.page.goto("https://moonid.net/account/login/?next=/api/account/connect/238/") # de
+        self.page.goto(BotSettings.LOGIN_URL)
     
     def __fill_login_form_and_submit_login(self) -> None:
         """Fill login form and submit"""
@@ -71,6 +70,44 @@ class PlayerService:
         self.page.wait_for_timeout(BotSettings.LONG_WAIT)
         print("Loaded fight")
 
+    def __should_attack_enemy(self, status: list) -> bool:
+        """
+        Determine if an enemy should be attacked based on their stats
+        
+        Args:
+            status: List of enemy stats
+            
+        Returns:
+            True if enemy meets attack criteria
+        """
+        # Base
+        lvl = int(status[0])
+        eficiency = status[1][1:]
+        vitality = int(status[3])
+
+        # Equipment
+        armor = int(status[4])
+        one_hand_weapon = int(status[5])
+        two_hand_weapon = int(status[6])
+
+        strength = int(status[7])
+        stamina = int(status[8])
+        dexterity = int(status[9])
+        fighting_ability = int(status[10])
+        parry = int(status[11])
+
+        print(f"Level: {lvl}, Eficiency: {eficiency}, Armor: {armor}, 1H Weapon: {one_hand_weapon}, 2H Weapon: {two_hand_weapon}")
+        print(f"Status - Strength: {strength}, Stamina: {stamina}, Dexterity: {dexterity}, Fighting Ability: {fighting_ability}, Parry: {parry}")
+        
+        if BotSettings.IS_INT_SERVER:
+            return armor != 0 and one_hand_weapon != 0 and two_hand_weapon != 0 and parry <= 17
+        
+        
+        return ((armor == 91 and one_hand_weapon == 23) or
+            (armor == 48 and one_hand_weapon == 65 and
+            (fighting_ability > 200 or stamina > 200 or dexterity > 200))) and parry <= 195
+        
+
     def find_zombies_and_attack(self) -> bool:
         """Find zombies on battlefield and attack them"""
         print("\n" + "=" * 90 + "\n" * 2 + "🔍 Searching for zombies to attack...")
@@ -94,31 +131,9 @@ class PlayerService:
 
             print("\n" + "=" * 90 + "\n")
             print(f"Zombie: {name}")
-            print(f"Raw status: {status}")
-
-            # Base
-            lvl = int(status[0])
-            eficiency = status[1][1:]
-            vitality = int(status[3])
-
-            # Equipment
-            armor = int(status[4])
-            one_hand_weapon = int(status[5])
-            two_hand_weapon = int(status[6])
-
-            strength = int(status[7])
-            stamina = int(status[8])
-            dexterity = int(status[9])
-            fighting_ability = int(status[10])
-            parry = int(status[11])
-
-            print(f"Level: {lvl}, Eficiency: {eficiency}, Armor: {armor}, 1H Weapon: {one_hand_weapon}, 2H Weapon: {two_hand_weapon}")
-            print(f"Status - Strength: {strength}, Stamina: {stamina}, Dexterity: {dexterity}, Fighting Ability: {fighting_ability}, Parry: {parry}")
 
             # Attack
-            if  ((armor == 91 and one_hand_weapon == 23) or
-                 (armor == 48 and one_hand_weapon == 65 and
-                  (fighting_ability > 200 or stamina > 200 or dexterity > 200))) and parry <= 195:
+            if self.__should_attack_enemy(status):
                 attack_btn_locator = enemy.locator('form .fsattackbut')
                 attack_btn_locator.evaluate(scroll_to_locator)
                 attack_btn_locator.click()

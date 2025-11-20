@@ -35,6 +35,7 @@ class HighscoreBot:
             account_service.login_player()
 
             while True:
+                print(f"Tracking started - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
                 count = 100
                 is_to_stop = False
                 players_data = []
@@ -95,7 +96,8 @@ class HighscoreBot:
                 print(f"Total players fetched: {len(players_data)}")
                 players_data.sort(key=lambda x: x.gold_difference, reverse=True)
                 self.tracker.record_players(players_data)
-                time.sleep(150)
+                print(f"Tracking ended - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+                time.sleep(300)
 
 
 def main():
@@ -109,8 +111,6 @@ def main():
     print("🔄" * 60 + "\n")
     
     print("\n" + "=" * 60)
-    print(f"Tracking started - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    print("=" * 60)
     
     bot.run()
 
