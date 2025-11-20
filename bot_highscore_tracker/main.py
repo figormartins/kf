@@ -93,15 +93,15 @@ class HighscoreBot:
                     count += 100
 
                 print(f"Total players fetched: {len(players_data)}")
-
+                players_data.sort(key=lambda x: x.gold_difference, reverse=True)
                 self.tracker.record_players(players_data)
-                time.sleep(60)
+                time.sleep(150)
 
 
 def main():
     """Main entry point - runs in continuous mode"""    
     BotSettings.ensure_directories()
-    bot = HighscoreBot(False)
+    bot = HighscoreBot(True)
     print("\n" + "🔄" * 60)
     print("BOT STARTED - CONTINUOUS MODE - HEADLESS: " + bot.headless.__str__())
     print("Login account and track zombies statistics repeatedly")
