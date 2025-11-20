@@ -89,27 +89,29 @@ class PlayerService:
 
         for enemy in enemies:
             # Status
-            status = enemy.locator('tr .fsval').all()
+            status = [s.inner_text() for s in enemy.locator('tr .fsval').all()]
             name = enemy.locator('.enemyname').inner_text()
-
-            # Base
-            lvl = int(status[0].inner_text())
-            eficiency = status[1].inner_text()[1:]
-            vitality = int(status[3].inner_text())
-
-            # Equipment
-            armor = int(status[4].inner_text())
-            one_hand_weapon = int(status[5].inner_text())
-            two_hand_weapon = int(status[6].inner_text())
-
-            strength = int(status[7].inner_text())
-            stamina = int(status[8].inner_text())
-            dexterity = int(status[9].inner_text())
-            fighting_ability = int(status[10].inner_text())
-            parry = int(status[11].inner_text())
 
             print("\n" + "=" * 90 + "\n")
             print(f"Zombie: {name}")
+            print(f"Raw status: {status}")
+
+            # Base
+            lvl = int(status[0])
+            eficiency = status[1][1:]
+            vitality = int(status[3])
+
+            # Equipment
+            armor = int(status[4])
+            one_hand_weapon = int(status[5])
+            two_hand_weapon = int(status[6])
+
+            strength = int(status[7])
+            stamina = int(status[8])
+            dexterity = int(status[9])
+            fighting_ability = int(status[10])
+            parry = int(status[11])
+
             print(f"Level: {lvl}, Eficiency: {eficiency}, Armor: {armor}, 1H Weapon: {one_hand_weapon}, 2H Weapon: {two_hand_weapon}")
             print(f"Status - Strength: {strength}, Stamina: {stamina}, Dexterity: {dexterity}, Fighting Ability: {fighting_ability}, Parry: {parry}")
 
