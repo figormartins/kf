@@ -39,13 +39,16 @@ class KnightFightBot:
                 try:
                     player_service.go_to_battlefield()
                     if player_service.wait_timer_if_needed(): continue
+                    start_time = time.perf_counter()
 
-                    #start attack zombies loop here
                     while True:
                         is_attack_performed = player_service.find_zombies_and_attack()
 
                         if is_attack_performed:
                             print("\n" + f"⚔️  Attack performed at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+                            end_time = time.perf_counter()
+                            request_duration = end_time - start_time
+                            print(f"⏰ Attack to zombie took {request_duration:.2f} seconds.")
                             break
                 except Exception as e:
                     print(f"⚠️ Error during battlefield operations: {e}")
@@ -62,6 +65,7 @@ def main():
     print("🔄" * 60 + "\n")
     
     print("\n" + "=" * 60)
+    print("Running on " + ("INT7" if BotSettings.IS_INT_SERVER else "DE15") + " server")
     print(f"Attacks started - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("=" * 60)
     

@@ -100,7 +100,7 @@ class PlayerService:
         print(f"Status - Strength: {strength}, Stamina: {stamina}, Dexterity: {dexterity}, Fighting Ability: {fighting_ability}, Parry: {parry}")
         
         if BotSettings.IS_INT_SERVER:
-            return armor != 0 and one_hand_weapon != 0 and two_hand_weapon != 0 and parry <= 17
+            return (parry <= 12 and stamina <= 12) or (stamina <= 10 and parry <= 17) or (fighting_ability <= 10 and parry <= 30) or (parry < 15)
         
         
         return ((armor == 91 and one_hand_weapon == 23) or
