@@ -23,14 +23,28 @@ services:
         max-size: "10m"
         max-file: "3"
 
-  battlefield-bot:
+  bf-bot-int7:
     build:
       context: .
       dockerfile: ./bot_battlefield/Dockerfile
-    container_name: battlefield-bot
+    container_name: bf-bot-int7
     restart: unless-stopped
     
     # Environment variables (optional customization)
     environment:
       - PYTHONUNBUFFERED=1
       - HEADLESS=true
+      - KF_IS_INT_SERVER=true
+
+  bf-bot-de15:
+    build:
+      context: .
+      dockerfile: ./bot_battlefield/Dockerfile
+    container_name: bf-bot-de15
+    restart: unless-stopped
+    
+    # Environment variables (optional customization)
+    environment:
+      - PYTHONUNBUFFERED=1
+      - HEADLESS=true
+      - KF_IS_INT_SERVER=false
