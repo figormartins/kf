@@ -1,5 +1,4 @@
-import time
-from bot.main import KnightFightBot
+from datetime import datetime
 from bot.models.attack_tracker import AttackTracker
 from bot_battlefield.config.settings import BotSettings
 from playwright.sync_api import sync_playwright
@@ -17,7 +16,7 @@ class Knife:
         """Run the knife bot to remove bot-created opponents"""
 
         attacks = self.tracker.get_attacks()
-        print(f"Found {len(attacks)} bot-created opponents to remove.")
+        print(f"Found {len(attacks)} opponents to remove. {datetime.now().isoformat()}")
         if not attacks: return
 
         with sync_playwright() as p:
@@ -44,7 +43,7 @@ class Knife:
 
 def main():
     """Main entry point - removes all bot opponents created from game"""
-    knife = Knife(headless=False)
+    knife = Knife(headless=True)
     print("KNIFE BOT STARTED - HEADLESS: " + knife.headless.__str__())
     knife.run()
     print("KNIFE BOT FINISHED")

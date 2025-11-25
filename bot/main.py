@@ -58,7 +58,7 @@ class KnightFightBot:
                 
                 # Step 2: Create and register player
                 player = player_service.create_player(credentials)
-                player_registered = player_service.register_player_name(player, timestamp)
+                player_registered = player_service.register_player_name(player)
 
                 # Step 2.1: Delete account
                 player_service.delete_account()

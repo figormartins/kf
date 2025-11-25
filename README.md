@@ -1,5 +1,9 @@
 # KnightFight Bot - Automated Game Bot 🤖⚔️# KnightFight Bot - Automated Game Bot
 
+python -m bot.main -> Cria bots, marca bot para ser deletado e ataca de hora em hora a conta principal
+python -m bot_battlefield.main -> Faz ataque no battlefield aos zumbis
+python -m bot_highscore_tracker.main -> Faz o tracking do ranking do jogo para analise de dados
+python -m bot.knife -> Deleta as contas dos bots, após 24h as contas estão disponiveis para serem deletadas.
 
 
 Bot automatizado para KnightFight que cria contas, jogadores e ataca oponentes continuamente com gerenciamento inteligente de cooldown.## 📋 Descrição

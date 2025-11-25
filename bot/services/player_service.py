@@ -35,7 +35,7 @@ class PlayerService:
             is_registered=False
         )
     
-    def register_player_name(self, player: Player, timestamp: int) -> bool:
+    def register_player_name(self, player: Player) -> bool:
         """
         Register player name in-game
         
@@ -103,8 +103,8 @@ class PlayerService:
             
             # Find and click delete account button/link
             tr_locators = self.page.locator('#page > form > div > table > tbody > tr').all()[-2:]
-            checkbox = tr_locators[0].locator('.checkTTunchecked').click()
-            save_button = tr_locators[1].locator('button').click()
+            tr_locators[0].locator('.checkTTunchecked').click()
+            tr_locators[1].locator('button').click()
             self.page.wait_for_timeout(BotSettings.LONG_WAIT)
             print("✅ Account deletion process completed")
         except Exception as e:
