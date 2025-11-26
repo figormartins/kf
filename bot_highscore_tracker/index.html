@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Highscore Tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        .filter-section {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .filter-group label {
+            font-weight: 600;
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        .filter-group input {
+            padding: 8px 12px;
+            border: 2px solid #667eea;
+            border-radius: 5px;
+            font-size: 0.95em;
+            width: 150px;
+        }
+
+        .filter-group input:focus {
+            outline: none;
+            border-color: #764ba2;
+            box-shadow: 0 0 5px rgba(118, 75, 162, 0.3);
+        }
+
+        .stats {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            background: #f0f4ff;
+            padding: 12px 20px;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+        }
+
+        .stat-box .label {
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        .stat-box .value {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: sticky;
+            top: 0;
+        }
+
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        th:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #e0e0e0;
+            transition: background 0.2s ease;
+        }
+
+        tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #fafbfc;
+        }
+
+        td {
+            padding: 12px 15px;
+            color: #333;
+        }
+
+        .player-name {
+            font-weight: 500;
+            color: #667eea;
+        }
+
+        .gold-lost {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        .level {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+            font-size: 1.1em;
+        }
+
+        .player-link {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .player-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .filter-section {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filter-group input {
+                width: 100%;
+            }
+
+            th, td {
+                padding: 8px 10px;
+                font-size: 0.9em;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Player Highscore Tracker</h1>
+
+        <div class="filter-section">
+            <div class="filter-group">
+                <label for="minGoldLost">Min Gold Lost:</label>
+                <input 
+                    type="number" 
+                    id="minGoldLost" 
+                    placeholder="0" 
+                    value="0"
+                    min="0"
+                >
+            </div>
+            <div class="filter-group">
+                <label for="maxGoldLost">Max Gold Lost:</label>
+                <input 
+                    type="number" 
+                    id="maxGoldLost" 
+                    placeholder="No limit" 
+                    value=""
+                >
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <div class="label">Total Players</div>
+                <div class="value" id="totalPlayers">0</div>
+            </div>
+            <div class="stat-box">
+                <div class="label">Filtered Players</div>
+                <div class="value" id="filteredPlayers">0</div>
+            </div>
+            <div class="stat-box">
+                <div class="label">Total Gold Lost</div>
+                <div class="value" id="totalGoldLost">0</div>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table id="playersTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Level</th>
+                        <th>Loot</th>
+                        <th>Fights</th>
+                        <th>Gold Lost</th>
+                        <th>Gold Difference</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+
+        <div id="noResults" class="no-results" style="display: none;">
+            No players found matching the filter criteria.
+        </div>
+    </div>
+
+    <script>
+        let playersData = [];
+
+        // Load data from JSON file
+        async function loadData() {
+            try {
+                const response = await fetch('./data/player_history.json', {
+                    mode: 'cors',
+                    cache: 'no-cache'
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                playersData = await response.json();
+                initializeTable();
+                setupEventListeners();
+                updateStats();
+            } catch (error) {
+                console.error('Error loading data:', error);
+                
+                // Try alternative: load via XMLHttpRequest
+                loadDataViaXHR();
+            }
+        }
+
+        function loadDataViaXHR() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', './data/player_history.json', true);
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    try {
+                        playersData = JSON.parse(xhr.responseText);
+                        initializeTable();
+                        setupEventListeners();
+                        updateStats();
+                    } catch (e) {
+                        showError('Failed to parse JSON data');
+                    }
+                } else {
+                    showError('Failed to load data (Status: ' + xhr.status + ')');
+                }
+            };
+            xhr.onerror = function() {
+                showError('Network error: Make sure you\'re running a local server. Use: python -m http.server 8000');
+            };
+            xhr.send();
+        }
+
+        function showError(message) {
+            document.getElementById('tableBody').innerHTML = 
+                '<tr><td colspan="6" style="color: red; padding: 20px; text-align: center;">' + message + '</td></tr>';
+            console.error(message);
+        }
+
+        function setupEventListeners() {
+            document.getElementById('minGoldLost').addEventListener('change', filterTable);
+            document.getElementById('maxGoldLost').addEventListener('change', filterTable);
+            document.getElementById('minGoldLost').addEventListener('input', filterTable);
+            document.getElementById('maxGoldLost').addEventListener('input', filterTable);
+        }
+
+        function formatNumber(num) {
+            return new Intl.NumberFormat('en-US').format(num);
+        }
+
+        function initializeTable() {
+            filterTable();
+        }
+
+        function filterTable() {
+            const minGold = parseInt(document.getElementById('minGoldLost').value) || 0;
+            const maxGold = parseInt(document.getElementById('maxGoldLost').value) || Infinity;
+
+            const filteredData = playersData.filter(player => {
+                const goldLost = player.gold_lost || 0;
+                return goldLost >= minGold && goldLost <= maxGold;
+            });
+
+            renderTable(filteredData);
+            updateFilterStats(filteredData);
+        }
+
+        function renderTable(data) {
+            const tableBody = document.getElementById('tableBody');
+            const noResults = document.getElementById('noResults');
+
+            if (data.length === 0) {
+                tableBody.innerHTML = '';
+                noResults.style.display = 'block';
+                return;
+            }
+
+            noResults.style.display = 'none';
+            tableBody.innerHTML = data.map(player => `
+                <tr>
+                    <td>
+                        <a href="${player.url}" target="_blank" class="player-link player-name">
+                            ${escapeHtml(player.name)}
+                        </a>
+                    </td>
+                    <td>
+                        <span class="level">${player.level}</span>
+                    </td>
+                    <td>${formatNumber(player.loot)}</td>
+                    <td>${formatNumber(player.fights)}</td>
+                    <td class="gold-lost">${formatNumber(player.gold_lost)}</td>
+                    <td>${formatNumber(player.gold_difference)}</td>
+                </tr>
+            `).join('');
+        }
+
+        function updateStats() {
+            document.getElementById('totalPlayers').textContent = formatNumber(playersData.length);
+        }
+
+        function updateFilterStats(filteredData) {
+            document.getElementById('filteredPlayers').textContent = formatNumber(filteredData.length);
+            
+            const totalGoldLost = filteredData.reduce((sum, player) => sum + (player.gold_lost || 0), 0);
+            document.getElementById('totalGoldLost').textContent = formatNumber(totalGoldLost);
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', loadData);
+    </script>
+</body>
+</html>
