@@ -35,8 +35,7 @@ class BotSettings:
     NEXT_ATTACK_WAIT = 600
     
     # Browser settings
-    #HEADLESS = os.getenv('HEADLESS', 'false').lower() == 'true'
-    HEADLESS = True  # --- IGNORE ---
+    HEADLESS = os.getenv('HEADLESS', 'true').lower() == 'true'
     # Attack cooldown settings
     ATTACK_COOLDOWN_HOURS = 1  # Martyn can only be attacked once per hour
     CHECK_INTERVAL_SECONDS = 60  # Check every minute if cooldown is over

@@ -100,12 +100,14 @@ class PlayerService:
         print(f"Status - Strength: {strength}, Stamina: {stamina}, Dexterity: {dexterity}, Fighting Ability: {fighting_ability}, Parry: {parry}")
         
         if BotSettings.IS_INT_SERVER:
-            return (armor == 3 and two_hand_weapon == 57) or (armor == 9 and two_hand_weapon == 51) or (armor == 20 and one_hand_weapon == 31) or (armor == 33 and one_hand_weapon == 27)
+            return ((armor == 91 and one_hand_weapon == 23) or
+                (armor == 48 and one_hand_weapon == 65)) and parry <= 109
+            #return (armor == 3 and two_hand_weapon == 57) or (armor == 9 and two_hand_weapon == 51) or (armor == 20 and one_hand_weapon == 31) or (armor == 33 and one_hand_weapon == 27)
         
         
         return ((armor == 91 and one_hand_weapon == 23) or
             (armor == 48 and one_hand_weapon == 65 and
-            (fighting_ability > 200 or stamina > 200 or dexterity > 200))) and parry <= 195
+            (fighting_ability > 200 or stamina > 200 or dexterity > 200))) and parry <= 220
         
 
     def find_zombies_and_attack(self) -> bool:
@@ -121,7 +123,7 @@ class PlayerService:
         
         enemies_locator = self.page.locator('div.fsbox')
         enemies = enemies_locator.all()
-        random_mod = 4 #random.randint(3, 4)
+        random_mod = random.randint(3, 4)
         count = 1
 
         for enemy in enemies:
