@@ -285,6 +285,7 @@
                 }
                 
                 playersData = await response.json();
+                playersData = playersData.filter(player => player.level <= 21);
                 initializeTable();
                 setupEventListeners();
                 updateStats();
