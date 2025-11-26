@@ -70,6 +70,17 @@ class PlayerService:
         self.page.wait_for_timeout(BotSettings.LONG_WAIT)
         print("Loaded fight")
 
+    def __set_eficiency(self) -> None:
+        """Set eficiency before searching for enemies"""
+        if BotSettings.EFICIENCY_MIN is None:
+            return
+
+        min = self.page.locator('#fpfrom')
+        max = self.page.locator('#fpto')
+
+        min.select_option(value=BotSettings.EFICIENCY_MIN)
+        max.select_option(value=BotSettings.EFICIENCY_MIN)
+
     def __should_attack_enemy(self, status: list) -> bool:
         """
         Determine if an enemy should be attacked based on their stats
@@ -118,6 +129,7 @@ class PlayerService:
         self.page.wait_for_timeout(BotSettings.QUICK_WAIT)
         enemy_search_locator = self.page.locator('form[name="enemysearch"] button')
         enemy_search_locator.evaluate(scroll_to_locator)
+        self.__set_eficiency()
         enemy_search_locator.click()
         self.page.wait_for_timeout(BotSettings.DEFAULT_WAIT)
         

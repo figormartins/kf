@@ -22,6 +22,7 @@ class BotSettings:
     # Target opponent
     TARGET_OPPONENT_ID = "522001088"
     OPPONENT_SEARCH_URL = f"{BASE_URL}/raubzug/gegner/?searchuserid={TARGET_OPPONENT_ID}"
+    EFICIENCY_MIN =  os.getenv('KF_EFICIENCY_MIN')
     
     # Timeouts (milliseconds)
     NAVIGATION_TIMEOUT = 30000

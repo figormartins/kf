@@ -65,7 +65,7 @@ def main():
     print("🔄" * 60 + "\n")
     
     print("\n" + "=" * 60)
-    print("Running on " + ("INT7" if BotSettings.IS_INT_SERVER else "DE15") + " server")
+    print("Running on " + ("INT7" if BotSettings.IS_INT_SERVER else "DE15") + " server and efficiency: " + BotSettings.EFICIENCY_MIN)
     print(f"Attacks started - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("=" * 60)
     
