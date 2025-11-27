@@ -5,6 +5,7 @@ from datetime import datetime
 import random
 import re 
 from bot_battlefield.config.settings import BotSettings
+from bot_battlefield.models.player_tracker import PlayerRecord, PlayerTracker
 from playwright.sync_api import Page, expect
 
 
@@ -13,6 +14,7 @@ class PlayerService:
     
     def __init__(self, page: Page):
         self.page = page
+        self.tracker = PlayerTracker(BotSettings.ATTACK_TRACKER_FILE)
 
     def __navigate_to_login(self) -> None:
         """Navigate to login page"""
@@ -112,7 +114,7 @@ class PlayerService:
         
         if BotSettings.IS_INT_SERVER:
             return ((armor == 91 and one_hand_weapon == 23) or
-                (armor == 48 and one_hand_weapon == 65)) and parry <= 109
+                (armor == 48 and one_hand_weapon == 65)) and parry <= 112
             #return (armor == 3 and two_hand_weapon == 57) or (armor == 9 and two_hand_weapon == 51) or (armor == 20 and one_hand_weapon == 31) or (armor == 33 and one_hand_weapon == 27)
         
         
@@ -142,6 +144,7 @@ class PlayerService:
             # Status
             status = [s.inner_text() for s in enemy.locator('tr .fsval').all()]
             name = enemy.locator('.enemyname').inner_text()
+            link = enemy.locator('a').get_attribute('href')
 
             print("\n" + "=" * 90 + "\n")
             print(f"Zombie: {name}")
@@ -152,6 +155,16 @@ class PlayerService:
                 attack_btn_locator.evaluate(scroll_to_locator)
                 attack_btn_locator.click()
                 expect(self.page.locator('.batrep-grid3')).to_be_visible(timeout=BotSettings.LONG_WAIT)
+
+                self.tracker.record_player(
+                    PlayerRecord(
+                        name=name,
+                        url=link,
+                        attacked_at=datetime.now(),
+                        data=str(status)
+                    )
+                )
+
                 return True
             
             if count % random_mod == 0:

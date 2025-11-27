@@ -50,9 +50,8 @@ class BotSettings:
     # Get the directory where this config file is located (bot/config/)
     _CONFIG_DIR = Path(__file__).parent.resolve()
     # Go up two levels: bot/config/ -> bot/ -> project_root/
-    BASE_DIR = _CONFIG_DIR.parent.parent
-    SCREENSHOTS_DIR = BASE_DIR / "bot_screenshots"
-    DATA_DIR = BASE_DIR / "bot_data"
+    BASE_DIR = _CONFIG_DIR.parent
+    DATA_DIR = BASE_DIR / "data"
     ATTACK_TRACKER_FILE = DATA_DIR / "attack_history.json"
     
     # Password settings
@@ -62,7 +61,6 @@ class BotSettings:
     @classmethod
     def ensure_directories(cls):
         """Ensure required directories exist"""
-        cls.SCREENSHOTS_DIR.mkdir(exist_ok=True)
         cls.DATA_DIR.mkdir(exist_ok=True)
 
 

@@ -55,7 +55,8 @@ class KnightFightBot:
 
 
 def main():
-    """Main entry point - runs in continuous mode"""    
+    """Main entry point - runs in continuous mode"""
+    BotSettings.ensure_directories()
     bot = KnightFightBot(headless=BotSettings.HEADLESS)
         
     print("\n" + "🔄" * 60)
