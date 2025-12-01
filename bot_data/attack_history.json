@@ -1,1 +1,29 @@
-[]
+[
+  {
+    "opponent_id": "522001088",
+    "timestamp": "2025-11-30T20:30:39.874667",
+    "player_name": "ErikBloodaxe5238",
+    "attack_successful": true,
+    "email": "donald.lawrence@decker.org.br",
+    "username": "donald.lawrence",
+    "password": "donald.lawrence@decker.org.br"
+  },
+  {
+    "opponent_id": "522001088",
+    "timestamp": "2025-11-30T21:30:41.206982",
+    "player_name": "HaraldFlameheart8844",
+    "attack_successful": true,
+    "email": "linda.stokes@clark.net",
+    "username": "linda.stokes",
+    "password": "linda.stokes@clark.net"
+  },
+  {
+    "opponent_id": "522001088",
+    "timestamp": "2025-11-30T22:30:42.630929",
+    "player_name": "MagnusFrostbeard35145",
+    "attack_successful": true,
+    "email": "dennis.patel@bowers-jones.net",
+    "username": "dennis.patel",
+    "password": "dennis.patel@bowers-jones.net"
+  }
+]

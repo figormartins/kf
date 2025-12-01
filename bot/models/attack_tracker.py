@@ -82,7 +82,7 @@ class AttackTracker:
         return max(opponent_attacks, key=lambda x: x.timestamp)
     
     def get_attacks(self) -> list[AttackRecord]:
-        """Get attacks records for older than 24 hours"""
+        """Get attacks records up to 8 PM of the previous day"""
         attacks = self._load_attacks()
         opponent_attacks = [
             AttackRecord.from_dict(a) 
@@ -93,9 +93,12 @@ class AttackTracker:
             return []
 
         now = datetime.now(timezone.utc).astimezone()
+        # Yesterday at 8 PM (20:00)
+        cutoff_time = now.replace(hour=20, minute=0, second=0, microsecond=0) - timedelta(days=1)
+        
         filtered_list = [
             item for item in opponent_attacks
-            if now > (item.timestamp.replace(tzinfo=timezone.utc).astimezone() + timedelta(hours=24))
+            if item.timestamp.replace(tzinfo=timezone.utc).astimezone() < cutoff_time
         ]
 
         return filtered_list

@@ -10,7 +10,7 @@ class Knife:
 
     def __init__(self,  headless: bool = False):
         self.headless = headless
-        self.tracker = AttackTracker(BotSettings.ATTACK_TRACKER_FILE)
+        self.tracker = AttackTracker(BotSettings.KNIFE_TRACKER_FILE)
 
     def run(self):
         """Run the knife bot to remove bot-created opponents"""

@@ -53,6 +53,8 @@ class BotSettings:
     BASE_DIR = _CONFIG_DIR.parent
     DATA_DIR = BASE_DIR / "data"
     ATTACK_TRACKER_FILE = DATA_DIR / "attack_history.json"
+
+    KNIFE_TRACKER_FILE = BASE_DIR.parent / "bot_data" / "attack_history.json"
     
     # Password settings
     PASSWORD_PREFIX = "KnightFight2025!"
