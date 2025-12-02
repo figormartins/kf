@@ -72,6 +72,15 @@ class PlayerService:
         self.page.wait_for_timeout(BotSettings.LONG_WAIT)
         print("Loaded fight")
 
+    def go_to_battle_reports(self) -> None:
+        """Navigate to battlefield attack reports"""
+        print("Navigating to battleground courier...")
+        
+        self.page.goto(f"{BotSettings.BASE_URL}/battleserver/nachrichten/angriff/")
+        self.page.wait_for_load_state('load')
+        print("Loaded attack reports")
+
+
     def __set_eficiency(self) -> None:
         """Set eficiency before searching for enemies"""
         if BotSettings.EFICIENCY_MIN is None:
@@ -109,13 +118,13 @@ class PlayerService:
         fighting_ability = int(status[10])
         parry = int(status[11])
 
-        print(f"Level: {lvl}, Eficiency: {eficiency}, Armor: {armor}, 1H Weapon: {one_hand_weapon}, 2H Weapon: {two_hand_weapon}")
-        print(f"Status - Strength: {strength}, Stamina: {stamina}, Dexterity: {dexterity}, Fighting Ability: {fighting_ability}, Parry: {parry}")
+        # print(f"Level: {lvl}, Eficiency: {eficiency}, Armor: {armor}, 1H Weapon: {one_hand_weapon}, 2H Weapon: {two_hand_weapon}")
+        # print(f"Status - Strength: {strength}, Stamina: {stamina}, Dexterity: {dexterity}, Fighting Ability: {fighting_ability}, Parry: {parry}")
         
         if BotSettings.IS_INT_SERVER:
             return ((armor == 91 and one_hand_weapon == 23) or
-                (armor == 48 and one_hand_weapon == 65)) and parry <= 112
-            #return (armor == 3 and two_hand_weapon == 57) or (armor == 9 and two_hand_weapon == 51) or (armor == 20 and one_hand_weapon == 31) or (armor == 33 and one_hand_weapon == 27)
+            (armor == 48 and one_hand_weapon == 65 and
+            (fighting_ability > 200 or stamina > 200 or dexterity > 200 or strength > 200))) and parry <= 150
         
         
         return ((armor == 91 and one_hand_weapon == 23) or
@@ -125,7 +134,7 @@ class PlayerService:
 
     def find_zombies_and_attack(self) -> bool:
         """Find zombies on battlefield and attack them"""
-        print("\n" + "=" * 90 + "\n" * 2 + "🔍 Searching for zombies to attack...")
+        print("\n" + "=" * 90 + "\n" * 2 + "🔍 Searching for zombies to attack..." + datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
         
         scroll_to_locator = "el => el.scrollIntoView({ behavior: 'smooth', block: 'center' })"
         self.page.wait_for_timeout(BotSettings.QUICK_WAIT)
@@ -155,15 +164,16 @@ class PlayerService:
                 attack_btn_locator.evaluate(scroll_to_locator)
                 attack_btn_locator.click()
                 expect(self.page.locator('.batrep-grid3')).to_be_visible(timeout=BotSettings.LONG_WAIT)
-
-                self.tracker.record_player(
-                    PlayerRecord(
-                        name=name,
-                        url=link,
-                        attacked_at=datetime.now(),
-                        data=str(status)
+                
+                if BotSettings.IS_INT_SERVER:
+                    self.tracker.record_player(
+                        PlayerRecord(
+                            name=name,
+                            url=link,
+                            attacked_at=datetime.now(),
+                            data=str(status)
+                        )
                     )
-                )
 
                 return True
             

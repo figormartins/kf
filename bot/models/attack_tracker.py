@@ -98,7 +98,7 @@ class AttackTracker:
         
         filtered_list = [
             item for item in opponent_attacks
-            if item.timestamp.replace(tzinfo=timezone.utc).astimezone() < cutoff_time
+            #if item.timestamp.replace(tzinfo=timezone.utc).astimezone() < cutoff_time
         ]
 
         return filtered_list
