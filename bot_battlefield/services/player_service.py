@@ -155,8 +155,8 @@ class PlayerService:
             name = enemy.locator('.enemyname').inner_text()
             link = enemy.locator('a').get_attribute('href')
 
-            print("\n" + "=" * 90 + "\n")
-            print(f"Zombie: {name}")
+            # print("\n" + "=" * 90 + "\n")
+            # print(f"Zombie: {name}")
 
             # Attack
             if self.__should_attack_enemy(status):
