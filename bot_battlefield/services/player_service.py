@@ -72,6 +72,23 @@ class PlayerService:
         self.page.wait_for_timeout(BotSettings.LONG_WAIT)
         print("Loaded fight")
 
+    def find_zombie_and_attack_by_id(self, id: str) -> bool:
+        """Go to zombie attack page and attack"""
+        print("Navigating to zombie page to attack...")
+        
+        self.page.goto(f"{BotSettings.BASE_URL}/battleserver/raubzug/gegner/?searchuserid={id}")
+        self.page.wait_for_load_state('load')
+        button = self.page.locator('button')
+
+        if button.is_visible():
+            button.click()
+            return True
+        return False
+
+        # text_locator = self.page.locator('.box-bg')
+        # text = "You can only attack the same player once every 12 hours but that player can carry out a counterattack on you!"
+        # if text in text_locator:
+
     def go_to_battle_reports(self) -> None:
         """Navigate to battlefield attack reports"""
         print("Navigating to battleground courier...")

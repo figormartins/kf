@@ -39,14 +39,23 @@ class PlayerTracker:
     def __init__(self, storage_path: Path):
         self.storage_path = storage_path
         self.storage_path.parent.mkdir(parents=True, exist_ok=True)
+
+    def get_players(self) -> list[PlayerRecord]:
+        """Get all tracked players"""
+        players_data = self.__load_players()
+        return [PlayerRecord.from_dict(p) for p in players_data]
     
     def record_player(self, record: PlayerRecord):
         """Record a successful player"""
-        players = self._load_players()
-        players.append(record.to_dict())
-        self._save_players(players)
+        players = self.__load_players()
+        filtered_players = [
+            p for p in players
+            if p['url'] != record.url
+        ]
+        filtered_players.append(record.to_dict())
+        self._save_players(filtered_players)
 
-    def _load_players(self) -> list:
+    def __load_players(self) -> list:
         """Load player records from storage"""
         if not self.storage_path.exists():
             return []

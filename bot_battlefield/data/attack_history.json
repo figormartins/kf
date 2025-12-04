@@ -18,54 +18,6 @@
     "data": "['39', '~6', '0', '2730', '91', '23', '0', '137', '167', '133', '208', '112']"
   },
   {
-    "name": "Boia Marchesi XI.",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941685531/",
-    "attacked_at": "2025-11-28T12:19:55.210235",
-    "data": "['40', '~4.5', '0', '2800', '91', '23', '0', '138', '165', '110', '162', '100']"
-  },
-  {
-    "name": "Escudeiro Kay XIII.",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941699110/",
-    "attacked_at": "2025-11-28T12:38:25.446404",
-    "data": "['39', '~4.5', '0', '2730', '91', '23', '0', '149', '147', '132', '162', '110']"
-  },
-  {
-    "name": "Petr No\u017eka XCII.",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941655463/",
-    "attacked_at": "2025-11-28T12:51:33.602382",
-    "data": "['43', '~4.5', '0', '3010', '91', '23', '0', '153', '173', '113', '164', '104']"
-  },
-  {
-    "name": "Florista Val\u00e9ria XLV.",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941736288/",
-    "attacked_at": "2025-11-28T13:00:10.503466",
-    "data": "['41', '~4.5', '0', '2870', '91', '23', '0', '129', '102', '112', '187', '102']"
-  },
-  {
-    "name": "\u041a\u0440\u0430\u043b \u0421\u0438\u043c\u0435\u043e\u043d V.",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941515404/",
-    "attacked_at": "2025-11-28T13:08:55.914999",
-    "data": "['40', '~4.5', '0', '2800', '91', '23', '0', '141', '115', '114', '180', '111']"
-  },
-  {
-    "name": "Dama Oroczko IX.",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941669160/",
-    "attacked_at": "2025-11-28T13:52:35.760960",
-    "data": "['41', '~4.5', '0', '2870', '91', '23', '0', '138', '135', '111', '172', '104']"
-  },
-  {
-    "name": "Kanalia Durdziak VII.",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941762783/",
-    "attacked_at": "2025-11-28T16:03:49.682746",
-    "data": "['38', '~4.5', '0', '2660', '91', '23', '0', '141', '176', '112', '148', '100']"
-  },
-  {
-    "name": "Tanner Zane XXXII.",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941458440/",
-    "attacked_at": "2025-11-28T17:54:11.640316",
-    "data": "['42', '~4.5', '0', '2940', '91', '23', '0', '131', '134', '131', '179', '102']"
-  },
-  {
     "name": "Principe Vianello XI.",
     "url": "https://int7.knightfight.moonid.net/battleserver/player/2941340324/",
     "attacked_at": "2025-11-29T09:25:16.434613",
@@ -732,12 +684,6 @@
     "data": "['44', '~6', '0', '3080', '91', '23', '0', '137', '235', '115', '195', '124']"
   },
   {
-    "name": "B\u00fcrger von Kradenhaller",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942033814/",
-    "attacked_at": "2025-11-30T15:55:47.417355",
-    "data": "['39', '~6', '0', '2730', '91', '23', '0', '137', '140', '111', '217', '135']"
-  },
-  {
     "name": "Escudeira Cassandra LIII.",
     "url": "https://int7.knightfight.moonid.net/battleserver/player/2941906141/",
     "attacked_at": "2025-11-30T16:04:23.612219",
@@ -1050,12 +996,6 @@
     "data": "['38', '~6', '0', '2660', '91', '23', '0', '133', '190', '110', '190', '147']"
   },
   {
-    "name": "B\u00fcrger von Kradenhaller",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942033814/",
-    "attacked_at": "2025-12-01T14:12:57.195204",
-    "data": "['39', '~6', '0', '2730', '91', '23', '0', '137', '140', '111', '217', '135']"
-  },
-  {
     "name": "Jirka Drs\u0148\u00e1k CXXII.",
     "url": "https://int7.knightfight.moonid.net/battleserver/player/2941822667/",
     "attacked_at": "2025-12-01T14:19:25.283837",
@@ -1212,12 +1152,6 @@
     "data": "['38', '~6', '0', '2660', '91', '23', '0', '147', '104', '127', '225', '119']"
   },
   {
-    "name": "Shopkeeper Benneton XLVIII.",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942167142/",
-    "attacked_at": "2025-12-01T21:41:54.769710",
-    "data": "['43', '~6', '0', '3010', '91', '23', '0', '148', '184', '132', '215', '104']"
-  },
-  {
     "name": "Petr \u0158voun LXXI.",
     "url": "https://int7.knightfight.moonid.net/battleserver/player/2942051812/",
     "attacked_at": "2025-12-01T21:49:30.596413",
@@ -1278,12 +1212,6 @@
     "data": "['42', '~6', '0', '2940', '91', '23', '0', '152', '204', '121', '204', '110']"
   },
   {
-    "name": "Leo\u0161 Vamp\u00edr XXXII.",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942167712/",
-    "attacked_at": "2025-12-01T22:58:11.923444",
-    "data": "['43', '~6', '0', '3010', '91', '23', '0', '146', '109', '130', '239', '119']"
-  },
-  {
     "name": "Boia Spadari",
     "url": "https://int7.knightfight.moonid.net/battleserver/player/2941844795/",
     "attacked_at": "2025-12-01T23:07:53.371618",
@@ -1342,12 +1270,6 @@
     "url": "https://int7.knightfight.moonid.net/battleserver/player/2941355278/",
     "attacked_at": "2025-12-02T00:12:20.270812",
     "data": "['39', '~6', '0', '2730', '91', '23', '0', '137', '166', '130', '207', '124']"
-  },
-  {
-    "name": "Squire Davies V.",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942153234/",
-    "attacked_at": "2025-12-02T00:18:02.632983",
-    "data": "['39', '~6', '0', '2730', '91', '23', '0', '148', '217', '119', '189', '121']"
   },
   {
     "name": "\u03a0\u03bf\u03bb\u03af\u03c4\u03b7\u03c2 \u0398\u03b5\u03cc\u03b4\u03c9\u03c1\u03bf\u03c2 XIX.",
@@ -1552,12 +1474,6 @@
     "url": "https://int7.knightfight.moonid.net/battleserver/player/2942026258/",
     "attacked_at": "2025-12-02T04:54:13.758843",
     "data": "['41', '~6', '0', '2870', '91', '23', '0', '150', '184', '128', '205', '141']"
-  },
-  {
-    "name": "B\u00fcrger von Kradenhaller",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942033814/",
-    "attacked_at": "2025-12-02T05:01:49.138800",
-    "data": "['39', '~6', '0', '2730', '91', '23', '0', '137', '140', '111', '217', '135']"
   },
   {
     "name": "Dama Diana CLXIX.",
@@ -1848,18 +1764,6 @@
     "data": "['44', '~6', '0', '3080', '91', '23', '0', '145', '180', '133', '218', '99']"
   },
   {
-    "name": "Shopkeeper Benneton XLVIII.",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942167142/",
-    "attacked_at": "2025-12-02T15:09:58.147942",
-    "data": "['43', '~6', '0', '3010', '91', '23', '0', '148', '184', '132', '215', '104']"
-  },
-  {
-    "name": "Leo\u0161 Vamp\u00edr XXXII.",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942167712/",
-    "attacked_at": "2025-12-02T15:17:41.577810",
-    "data": "['43', '~6', '0', '3010', '91', '23', '0', '146', '109', '130', '239', '119']"
-  },
-  {
     "name": "Imperatriz Lara XLIX.",
     "url": "https://int7.knightfight.moonid.net/battleserver/player/2941972606/",
     "attacked_at": "2025-12-02T15:23:05.885874",
@@ -1870,12 +1774,6 @@
     "url": "https://int7.knightfight.moonid.net/battleserver/player/2941969310/",
     "attacked_at": "2025-12-02T15:29:49.213023",
     "data": "['38', '~6', '0', '2660', '91', '23', '0', '151', '141', '123', '217', '106']"
-  },
-  {
-    "name": "F\u00fcrstin von Wasserfurt",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942241773/",
-    "attacked_at": "2025-12-02T15:35:55.511228",
-    "data": "['44', '~6', '0', '3080', '91', '23', '0', '129', '195', '123', '213', '117']"
   },
   {
     "name": "\u039b\u03cc\u03c1\u03b4\u03bf\u03c2 \u0394\u03b7\u03bc\u03cc\u03ba\u03c1\u03b9\u03c4\u03bf\u03c2 IX.",
@@ -2046,12 +1944,6 @@
     "data": "['43', '~6', '0', '3010', '91', '23', '0', '142', '179', '126', '218', '123']"
   },
   {
-    "name": "B\u00fcrger von Kradenhaller",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942033814/",
-    "attacked_at": "2025-12-02T19:23:56.181164",
-    "data": "['39', '~6', '0', '2730', '91', '23', '0', '137', '140', '111', '217', '135']"
-  },
-  {
     "name": "Florista Diana XLII.",
     "url": "https://int7.knightfight.moonid.net/battleserver/player/2942120075/",
     "attacked_at": "2025-12-02T19:29:35.061787",
@@ -2080,12 +1972,6 @@
     "url": "https://int7.knightfight.moonid.net/battleserver/player/2941488136/",
     "attacked_at": "2025-12-02T20:05:47.011588",
     "data": "['41', '~6', '0', '2870', '91', '23', '0', '141', '171', '124', '208', '148']"
-  },
-  {
-    "name": "Z\u0142y Ksi\u0105\u017c\u0119 Kler II.",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942276080/",
-    "attacked_at": "2025-12-02T20:10:52.706335",
-    "data": "['44', '~6', '0', '3080', '91', '23', '0', '138', '181', '110', '214', '147']"
   },
   {
     "name": "Duchess Wilson V.",
@@ -2124,18 +2010,6 @@
     "data": "['44', '~6', '0', '3080', '91', '23', '0', '145', '194', '115', '210', '134']"
   },
   {
-    "name": "Ale\u0161 V\u0159e\u0161tidlo CXXXIX.",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942278151/",
-    "attacked_at": "2025-12-02T21:02:57.602504",
-    "data": "['43', '~6', '0', '3010', '91', '23', '0', '129', '191', '129', '208', '142']"
-  },
-  {
-    "name": "\u0386\u03c1\u03c7\u03bf\u03bd\u03c4\u03b1\u03c2 \u039a\u03b1\u03bb\u03bb\u03af\u03b1\u03c2 V.",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942291755/",
-    "attacked_at": "2025-12-02T21:08:28.209835",
-    "data": "['43', '~6', '0', '3010', '91', '23', '0', '137', '197', '131', '207', '122']"
-  },
-  {
     "name": "Markgr\u00e4fin von Altenlohe",
     "url": "https://int7.knightfight.moonid.net/battleserver/player/2942312694/",
     "attacked_at": "2025-12-03T09:32:56.876392",
@@ -2146,5 +2020,539 @@
     "url": "https://int7.knightfight.moonid.net/battleserver/player/2942026258/",
     "attacked_at": "2025-12-03T09:38:40.261541",
     "data": "['41', '~6', '0', '2870', '91', '23', '0', '150', '184', '128', '205', '141']"
+  },
+  {
+    "name": "Comerciante Isabel XXXVII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941886434/",
+    "attacked_at": "2025-12-03T09:44:01.390464",
+    "data": "['41', '~6', '0', '2870', '91', '23', '0', '137', '143', '117', '222', '146']"
+  },
+  {
+    "name": "Kanalia Noc VIII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941781555/",
+    "attacked_at": "2025-12-03T09:49:58.595333",
+    "data": "['38', '~6', '0', '2660', '91', '23', '0', '135', '163', '113', '203', '143']"
+  },
+  {
+    "name": "Principessa Albertosi",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942046600/",
+    "attacked_at": "2025-12-03T09:55:38.095616",
+    "data": "['42', '~6', '0', '2940', '91', '23', '0', '142', '133', '120', '226', '141']"
+  },
+  {
+    "name": "Petr \u0158voun LXXI.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942051812/",
+    "attacked_at": "2025-12-03T10:00:56.591822",
+    "data": "['40', '~6', '0', '2800', '91', '23', '0', '130', '146', '128', '217', '137']"
+  },
+  {
+    "name": "Duque Jo\u00e3o Pequeno XII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941699635/",
+    "attacked_at": "2025-12-03T10:07:29.334883",
+    "data": "['39', '~6', '0', '2730', '91', '23', '0', '137', '167', '133', '208', '112']"
+  },
+  {
+    "name": "Juiz Ivan XLI.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942067203/",
+    "attacked_at": "2025-12-03T10:13:26.826426",
+    "data": "['41', '~6', '0', '2870', '91', '23', '0', '140', '184', '132', '207', '140']"
+  },
+  {
+    "name": "Conde Duarte XIV.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942114527/",
+    "attacked_at": "2025-12-03T10:19:06.332200",
+    "data": "['38', '~6', '0', '2660', '91', '23', '0', '143', '120', '117', '223', '113']"
+  },
+  {
+    "name": "Count Bennet XXII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942379489/",
+    "attacked_at": "2025-12-03T10:24:27.210810",
+    "data": "['41', '~6', '0', '2870', '91', '23', '0', '150', '116', '117', '231', '127']"
+  },
+  {
+    "name": "Rze\u017anik R\u00f3\u017ca",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941691588/",
+    "attacked_at": "2025-12-03T10:29:47.776712",
+    "data": "['41', '~6', '0', '2870', '91', '23', '0', '144', '199', '123', '205', '109']"
+  },
+  {
+    "name": "Landgraf von Petersbrunn",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942374616/",
+    "attacked_at": "2025-12-03T10:36:22.683064",
+    "data": "['39', '~6', '0', '2730', '91', '23', '0', '138', '188', '116', '201', '135']"
+  },
+  {
+    "name": "Mirka Uhnil\u00e1 CLXXXI.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941991662/",
+    "attacked_at": "2025-12-03T10:42:20.721470",
+    "data": "['40', '~6', '0', '2800', '91', '23', '0', '136', '222', '127', '189', '145']"
+  },
+  {
+    "name": "\u041c\u0430\u0433\u044c\u043e\u0441\u043d\u0438\u0446\u0430 \u041d\u0435\u043d\u0430\u0441\u0438\u0442\u043d\u0430 XI.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942281372/",
+    "attacked_at": "2025-12-03T10:47:43.240204",
+    "data": "['39', '~6', '0', '2730', '91', '23', '0', '139', '169', '120', '202', '150']"
+  },
+  {
+    "name": "Comerciante Regina LXXIV.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942336849/",
+    "attacked_at": "2025-12-03T11:03:59.077417",
+    "data": "['38', '~6', '0', '2660', '91', '23', '0', '127', '194', '133', '189', '149']"
+  },
+  {
+    "name": "Marcela Uhnil\u00e1 XXVII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942235845/",
+    "attacked_at": "2025-12-03T11:12:10.125038",
+    "data": "['44', '~6', '0', '3080', '91', '23', '0', '126', '184', '122', '217', '107']"
+  },
+  {
+    "name": "Judge Wainwright XI.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941790203/",
+    "attacked_at": "2025-12-03T11:28:33.818375",
+    "data": "['44', '~6', '0', '3080', '91', '23', '0', '145', '194', '115', '210', '134']"
+  },
+  {
+    "name": "F\u00fcrstin zu Rauchberg",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942225716/",
+    "attacked_at": "2025-12-03T11:49:22.875002",
+    "data": "['39', '~6', '0', '2730', '91', '23', '0', '149', '172', '109', '205', '119']"
+  },
+  {
+    "name": "Markgraf von Wasserhof",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941991090/",
+    "attacked_at": "2025-12-03T12:00:28.939521",
+    "data": "['44', '~6', '0', '3080', '91', '23', '0', '136', '165', '115', '223', '108']"
+  },
+  {
+    "name": "Lady Pen\u00e9lope LIV.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941570084/",
+    "attacked_at": "2025-12-03T12:20:29.666830",
+    "data": "['39', '~6', '0', '2730', '91', '23', '0', '136', '230', '125', '181', '142']"
+  },
+  {
+    "name": "\u0399\u03c0\u03c0\u03bf\u03ba\u03cc\u03bc\u03bf\u03c2 \u03a0\u03b5\u03c1\u03b9\u03ba\u03bb\u03ae\u03c2 XXVIII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942077849/",
+    "attacked_at": "2025-12-03T12:27:42.483590",
+    "data": "['41', '~6', '0', '2870', '91', '23', '0', '144', '175', '125', '212', '124']"
+  },
+  {
+    "name": "Carniceiro Duarte VIII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942365982/",
+    "attacked_at": "2025-12-03T12:34:40.519506",
+    "data": "['38', '~6', '0', '2660', '91', '23', '0', '129', '161', '112', '203', '136']"
+  },
+  {
+    "name": "Bottegaia Basile VIII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942259761/",
+    "attacked_at": "2025-12-03T12:40:14.895855",
+    "data": "['39', '~6', '0', '2730', '91', '23', '0', '152', '133', '133', '218', '132']"
+  },
+  {
+    "name": "Imperatriz Lara XLIX.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941972606/",
+    "attacked_at": "2025-12-03T12:47:00.456673",
+    "data": "['42', '~6', '0', '2940', '91', '23', '0', '129', '194', '109', '207', '125']"
+  },
+  {
+    "name": "\u0424\u0435\u0440\u043c\u0435\u0440\u043a\u0430 \u0410\u0440\u0438\u0430\u043d\u0430 XVI.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942374531/",
+    "attacked_at": "2025-12-03T12:59:34.161386",
+    "data": "['39', '~6', '0', '2730', '91', '23', '0', '133', '217', '110', '186', '138']"
+  },
+  {
+    "name": "General Sebasti\u00e3o",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942033310/",
+    "attacked_at": "2025-12-03T13:07:52.064068",
+    "data": "['38', '~6', '0', '2660', '91', '23', '0', '137', '156', '126', '205', '125']"
+  },
+  {
+    "name": "S\u0119dzia szyc VII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942231116/",
+    "attacked_at": "2025-12-03T13:44:48.032722",
+    "data": "['43', '~6', '0', '3010', '91', '23', '0', '131', '163', '120', '223', '119']"
+  },
+  {
+    "name": "Dama Lily CXXV.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941677918/",
+    "attacked_at": "2025-12-03T13:55:14.048082",
+    "data": "['40', '~6', '0', '2800', '91', '23', '0', '140', '187', '117', '201', '139']"
+  },
+  {
+    "name": "\u041a\u0440\u0430\u043b\u0438\u0446\u0430 \u0420\u0430\u0434\u043e\u0441\u0432\u0435\u0442\u0430 IX.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942012561/",
+    "attacked_at": "2025-12-03T14:01:11.378641",
+    "data": "['38', '~6', '0', '2660', '91', '23', '0', '142', '223', '129', '178', '150']"
+  },
+  {
+    "name": "\u0395\u03ba\u03c4\u03b5\u03bb\u03b5\u03c3\u03c4\u03ae\u03c2 \u0391\u03c7\u03b9\u03bb\u03bb\u03ad\u03b1\u03c2 VIII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942035860/",
+    "attacked_at": "2025-12-03T14:08:43.199569",
+    "data": "['41', '~6', '0', '2870', '91', '23', '0', '147', '174', '126', '209', '135']"
+  },
+  {
+    "name": "Baron von Ditschreich",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942211517/",
+    "attacked_at": "2025-12-03T14:20:37.618163",
+    "data": "['38', '~6', '0', '2660', '91', '23', '0', '143', '162', '125', '202', '134']"
+  },
+  {
+    "name": "Ale\u0161 Zomb\u00edk CXXVII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942230494/",
+    "attacked_at": "2025-12-03T14:28:36.779538",
+    "data": "['38', '~6', '0', '2660', '91', '23', '0', '146', '232', '115', '182', '115']"
+  },
+  {
+    "name": "Emperor Twinings VIII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942388226/",
+    "attacked_at": "2025-12-03T14:34:17.090412",
+    "data": "['42', '~6', '0', '2940', '48', '65', '0', '128', '193', '131', '221', '148']"
+  },
+  {
+    "name": "Duque Marcus II.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942371926/",
+    "attacked_at": "2025-12-03T14:44:00.015804",
+    "data": "['43', '~6', '0', '3010', '91', '23', '0', '141', '211', '132', '201', '128']"
+  },
+  {
+    "name": "Baronowa Maciejewska III.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941969310/",
+    "attacked_at": "2025-12-03T14:52:46.310410",
+    "data": "['38', '~6', '0', '2660', '91', '23', '0', '151', '141', '123', '217', '106']"
+  },
+  {
+    "name": "Archduke Olding XVII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941844148/",
+    "attacked_at": "2025-12-03T14:59:37.903498",
+    "data": "['38', '~6', '0', '2660', '91', '23', '0', '146', '180', '114', '194', '140']"
+  },
+  {
+    "name": "Ju\u00edza Milene CIV.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942241771/",
+    "attacked_at": "2025-12-03T15:06:54.063639",
+    "data": "['42', '~6', '0', '2940', '91', '23', '0', '144', '188', '131', '207', '150']"
+  },
+  {
+    "name": "Queen Bailey XX.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942021145/",
+    "attacked_at": "2025-12-03T15:12:32.691604",
+    "data": "['40', '~6', '0', '2800', '91', '23', '0', '127', '168', '122', '212', '127']"
+  },
+  {
+    "name": "Regina Capellini III.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942197707/",
+    "attacked_at": "2025-12-03T15:17:38.452372",
+    "data": "['44', '~6', '0', '3080', '91', '23', '0', '144', '188', '110', '210', '145']"
+  },
+  {
+    "name": "Leo\u0161 Pytl\u00edk CLIII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942051733/",
+    "attacked_at": "2025-12-03T15:22:49.850992",
+    "data": "['40', '~6', '0', '2800', '91', '23', '0', '140', '201', '133', '198', '129']"
+  },
+  {
+    "name": "Bottegaio Serra IV.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942309491/",
+    "attacked_at": "2025-12-03T15:28:02.012284",
+    "data": "['40', '~6', '0', '2800', '91', '23', '0', '138', '196', '118', '200', '149']"
+  },
+  {
+    "name": "Michaela Uhnil\u00e1 XXXV.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942002550/",
+    "attacked_at": "2025-12-03T15:33:13.592493",
+    "data": "['38', '~6', '0', '2660', '91', '23', '0', '130', '168', '109', '200', '136']"
+  },
+  {
+    "name": "Kat Pulchny XIX.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942382651/",
+    "attacked_at": "2025-12-03T15:40:58.451786",
+    "data": "['44', '~6', '0', '3080', '48', '65', '0', '128', '128', '114', '245', '141']"
+  },
+  {
+    "name": "Ritterin von Siedelreich",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942036360/",
+    "attacked_at": "2025-12-03T15:46:08.682306",
+    "data": "['38', '~6', '0', '2660', '91', '23', '0', '127', '199', '112', '189', '130']"
+  },
+  {
+    "name": "Libor Slabotka LXXXVII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942012563/",
+    "attacked_at": "2025-12-03T15:51:58.470226",
+    "data": "['43', '~6', '0', '3010', '91', '23', '0', '145', '178', '132', '214', '140']"
+  },
+  {
+    "name": "Viscount Benneton VIII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942038411/",
+    "attacked_at": "2025-12-03T15:59:33.572377",
+    "data": "['44', '~6', '0', '3080', '91', '23', '0', '147', '123', '111', '233', '138']"
+  },
+  {
+    "name": "Rze\u017anik Balcerek VI.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941568079/",
+    "attacked_at": "2025-12-03T16:09:23.286902",
+    "data": "['38', '~6', '0', '2660', '91', '23', '0', '144', '228', '111', '180', '121']"
+  },
+  {
+    "name": "Herzogin zu Stiftbeuern",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942278736/",
+    "attacked_at": "2025-12-03T16:17:11.727851",
+    "data": "['40', '~6', '0', '2800', '48', '65', '0', '135', '150', '124', '240', '133']"
+  },
+  {
+    "name": "Lady Janete XXXIV.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941744777/",
+    "attacked_at": "2025-12-03T16:23:40.093936",
+    "data": "['40', '~6', '0', '2800', '91', '23', '0', '130', '198', '116', '199', '129']"
+  },
+  {
+    "name": "Princesa Maria XIV.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942144944/",
+    "attacked_at": "2025-12-03T16:30:01.251084",
+    "data": "['42', '~6', '0', '2940', '48', '65', '0', '129', '216', '117', '216', '138']"
+  },
+  {
+    "name": "Duquesa Mariana XIX.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942236462/",
+    "attacked_at": "2025-12-03T16:35:20.043734",
+    "data": "['43', '~6', '0', '3010', '91', '23', '0', '128', '222', '111', '195', '147']"
+  },
+  {
+    "name": "\u0413\u0440\u0430\u0444\u0438\u043d\u044f \u0421\u043e\u0444\u0438\u044f XIII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942312154/",
+    "attacked_at": "2025-12-03T16:52:38.721150",
+    "data": "['43', '~6', '0', '3010', '91', '23', '0', '140', '179', '131', '212', '139']"
+  },
+  {
+    "name": "Kurf\u00fcrst von Duckbeuren",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941811880/",
+    "attacked_at": "2025-12-03T16:58:50.488401",
+    "data": "['40', '~6', '0', '2800', '91', '23', '0', '146', '173', '130', '206', '145']"
+  },
+  {
+    "name": "Ane\u017eka Bezok\u00e1 CXXXII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942411834/",
+    "attacked_at": "2025-12-03T17:09:14.876603",
+    "data": "['43', '~6', '0', '3010', '91', '23', '0', '132', '157', '123', '222', '126']"
+  },
+  {
+    "name": "Citizen Richards XX.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941610221/",
+    "attacked_at": "2025-12-03T17:14:44.936896",
+    "data": "['43', '~6', '0', '3010', '91', '23', '0', '143', '161', '115', '222', '125']"
+  },
+  {
+    "name": "Graf zu Brettberg",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941819416/",
+    "attacked_at": "2025-12-03T17:24:32.166800",
+    "data": "['42', '~6', '0', '2940', '91', '23', '0', '141', '242', '114', '190', '140']"
+  },
+  {
+    "name": "Freiherr zu Wasserstedele",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942153912/",
+    "attacked_at": "2025-12-03T17:32:37.361510",
+    "data": "['41', '~6', '0', '2870', '48', '65', '0', '120', '95', '113', '261', '150']"
+  },
+  {
+    "name": "Countess Nicholson VII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942411836/",
+    "attacked_at": "2025-12-03T17:39:12.770608",
+    "data": "['40', '~6', '0', '2800', '91', '23', '0', '131', '174', '127', '207', '137']"
+  },
+  {
+    "name": "Ale\u0161 No\u017eka CL.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942310025/",
+    "attacked_at": "2025-12-03T17:44:44.240822",
+    "data": "['42', '~6', '0', '2940', '91', '23', '0', '144', '181', '116', '211', '149']"
+  },
+  {
+    "name": "Marquise Underfoot III.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941931127/",
+    "attacked_at": "2025-12-03T17:51:34.994527",
+    "data": "['44', '~6', '0', '3080', '91', '23', '0', '134', '187', '116', '213', '144']"
+  },
+  {
+    "name": "\u0391\u03c0\u03b1\u03c4\u03b5\u03ce\u03bd\u03b9\u03c3\u03c3\u03b1 \u0393\u03b1\u03af\u03b1 XXVII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942409491/",
+    "attacked_at": "2025-12-03T17:59:41.040087",
+    "data": "['42', '~6', '0', '2940', '91', '23', '0', '128', '171', '123', '215', '134']"
+  },
+  {
+    "name": "Dziedzic Janosik",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942192158/",
+    "attacked_at": "2025-12-03T18:05:39.197913",
+    "data": "['38', '~6', '0', '2660', '91', '23', '0', '126', '152', '132', '206', '137']"
+  },
+  {
+    "name": "Comerciante No\u00eamia XI.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942401412/",
+    "attacked_at": "2025-12-03T18:18:38.756411",
+    "data": "['39', '~6', '0', '2730', '91', '23', '0', '151', '193', '110', '198', '142']"
+  },
+  {
+    "name": "\u039b\u03cc\u03c1\u03b4\u03bf\u03c2 \u0394\u03b7\u03bc\u03cc\u03ba\u03c1\u03b9\u03c4\u03bf\u03c2 IX.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942101137/",
+    "attacked_at": "2025-12-03T18:25:40.245945",
+    "data": "['44', '~6', '0', '3080', '91', '23', '0', '131', '179', '116', '211', '149']"
+  },
+  {
+    "name": "Kat Kot X.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942267725/",
+    "attacked_at": "2025-12-03T18:32:21.531116",
+    "data": "['45', '~6', '0', '3150', '48', '65', '0', '142', '173', '122', '229', '131']"
+  },
+  {
+    "name": "Ksi\u0105\u017c\u0119 Granat VIII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942358365/",
+    "attacked_at": "2025-12-03T18:46:48.865367",
+    "data": "['42', '~6', '0', '2940', '91', '23', '0', '135', '160', '113', '220', '115']"
+  },
+  {
+    "name": "\u0411\u0430\u0440\u043e\u043d\u0435\u0441\u0430 \u0413\u0430\u0440\u0434\u0435\u043d\u0438\u044f VI.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941718294/",
+    "attacked_at": "2025-12-03T18:52:02.944620",
+    "data": "['38', '~6', '0', '2660', '91', '23', '0', '132', '172', '112', '198', '135']"
+  },
+  {
+    "name": "Landgraf zu Waldplag",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942180995/",
+    "attacked_at": "2025-12-03T19:04:33.816745",
+    "data": "['41', '~6', '0', '2870', '91', '23', '0', '143', '191', '110', '203', '144']"
+  },
+  {
+    "name": "Ju\u00edza Milene XLIX.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942355136/",
+    "attacked_at": "2025-12-03T19:13:27.979420",
+    "data": "['44', '~6', '0', '3080', '91', '23', '0', '141', '190', '132', '210', '132']"
+  },
+  {
+    "name": "\u041a\u043e\u0436\u0430\u0440 \u041b\u0430\u0437\u0430\u0440 VI.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942409144/",
+    "attacked_at": "2025-12-03T19:25:23.777198",
+    "data": "['41', '~6', '0', '2870', '91', '23', '0', '152', '216', '112', '195', '144']"
+  },
+  {
+    "name": "Duchess Truman XXVIII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942260287/",
+    "attacked_at": "2025-12-03T19:30:55.546823",
+    "data": "['39', '~6', '0', '2730', '91', '23', '0', '143', '146', '122', '214', '143']"
+  },
+  {
+    "name": "Jirka Moze\u010dek XLIV.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941959162/",
+    "attacked_at": "2025-12-03T19:37:14.689299",
+    "data": "['44', '~6', '0', '3080', '91', '23', '0', '149', '206', '124', '205', '142']"
+  },
+  {
+    "name": "Kr\u00f3l P\u0142etwa VIII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942145544/",
+    "attacked_at": "2025-12-03T19:42:35.996418",
+    "data": "['38', '~6', '0', '2660', '91', '23', '0', '146', '184', '124', '197', '120']"
+  },
+  {
+    "name": "Pr\u00edncipe Pedro XVI.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942420329/",
+    "attacked_at": "2025-12-03T19:52:34.230149",
+    "data": "['38', '~6', '0', '2660', '91', '23', '0', '144', '134', '114', '213', '129']"
+  },
+  {
+    "name": "Duke Twinings XI.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942280760/",
+    "attacked_at": "2025-12-03T19:58:47.224820",
+    "data": "['42', '~6', '0', '2940', '91', '23', '0', '147', '224', '122', '198', '131']"
+  },
+  {
+    "name": "\u0421\u044a\u0434\u0438\u044f \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u044a\u0440 III.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942352902/",
+    "attacked_at": "2025-12-03T20:09:15.795255",
+    "data": "['38', '~6', '0', '2660', '91', '23', '0', '141', '140', '128', '210', '129']"
+  },
+  {
+    "name": "Sklepikarz Sambor IX.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942286483/",
+    "attacked_at": "2025-12-03T20:16:13.744872",
+    "data": "['43', '~6', '0', '3010', '91', '23', '0', '151', '139', '133', '228', '125']"
+  },
+  {
+    "name": "Baronessa Rizzi VII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942412174/",
+    "attacked_at": "2025-12-03T20:28:37.027869",
+    "data": "['38', '~6', '0', '2660', '91', '23', '0', '152', '141', '119', '211', '138']"
+  },
+  {
+    "name": "Comerciante Lancelot XXIX.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941991092/",
+    "attacked_at": "2025-12-03T20:34:12.433910",
+    "data": "['44', '~6', '0', '3080', '91', '23', '0', '149', '164', '109', '220', '125']"
+  },
+  {
+    "name": "Pavel St\u0159e\u0161tidlo LXXV.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942422562/",
+    "attacked_at": "2025-12-03T20:40:49.524126",
+    "data": "['41', '~6', '0', '2870', '91', '23', '0', '129', '172', '117', '209', '146']"
+  },
+  {
+    "name": "Kanalia Maciejewska II.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941763277/",
+    "attacked_at": "2025-12-03T21:03:21.233984",
+    "data": "['42', '~6', '0', '2940', '91', '23', '0', '140', '248', '111', '185', '134']"
+  },
+  {
+    "name": "\u0418\u043c\u043f\u0435\u0440\u0430\u0442\u043e\u0440 \u041d\u0435\u0434\u044f\u043b\u043a\u043e V.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2941638560/",
+    "attacked_at": "2025-12-03T21:14:06.216990",
+    "data": "['42', '~6', '0', '2940', '91', '23', '0', '152', '175', '110', '215', '109']"
+  },
+  {
+    "name": "\u0395\u03ba\u03c4\u03b5\u03bb\u03ad\u03c3\u03c4\u03c1\u03b9\u03b1 \u0398\u03b5\u03b1\u03bd\u03ce",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942275544/",
+    "attacked_at": "2025-12-03T21:21:32.943826",
+    "data": "['44', '~6', '0', '3080', '91', '23', '0', '145', '180', '133', '218', '99']"
+  },
+  {
+    "name": "Squire Davies V.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942153234/",
+    "attacked_at": "2025-12-04T09:37:13.464688",
+    "data": "['39', '~6', '0', '2730', '91', '23', '0', '148', '217', '119', '189', '121']"
+  },
+  {
+    "name": "\u0386\u03c1\u03c7\u03bf\u03bd\u03c4\u03b1\u03c2 \u039a\u03b1\u03bb\u03bb\u03af\u03b1\u03c2 V.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942291755/",
+    "attacked_at": "2025-12-04T09:44:14.886934",
+    "data": "['43', '~6', '0', '3010', '91', '23', '0', '137', '197', '131', '207', '122']"
+  },
+  {
+    "name": "Shopkeeper Benneton XLVIII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942167142/",
+    "attacked_at": "2025-12-04T09:55:51.901875",
+    "data": "['43', '~6', '0', '3010', '91', '23', '0', '148', '184', '132', '215', '104']"
+  },
+  {
+    "name": "B\u00fcrger von Kradenhaller",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942033814/",
+    "attacked_at": "2025-12-04T10:06:05.712577",
+    "data": "['39', '~6', '0', '2730', '91', '23', '0', '137', '140', '111', '217', '135']"
+  },
+  {
+    "name": "Ale\u0161 V\u0159e\u0161tidlo CXXXIX.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942278151/",
+    "attacked_at": "2025-12-04T10:14:52.738587",
+    "data": "['43', '~6', '0', '3010', '91', '23', '0', '129', '191', '129', '208', '142']"
+  },
+  {
+    "name": "Leo\u0161 Vamp\u00edr XXXII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942167712/",
+    "attacked_at": "2025-12-04T10:23:36.265466",
+    "data": "['43', '~6', '0', '3010', '91', '23', '0', '146', '109', '130', '239', '119']"
+  },
+  {
+    "name": "F\u00fcrstin von Wasserfurt",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942241773/",
+    "attacked_at": "2025-12-04T10:29:14.199086",
+    "data": "['44', '~6', '0', '3080', '91', '23', '0', '129', '195', '123', '213', '117']"
+  },
+  {
+    "name": "Z\u0142y Ksi\u0105\u017c\u0119 Kler II.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942276080/",
+    "attacked_at": "2025-12-04T10:46:22.121374",
+    "data": "['44', '~6', '0', '3080', '91', '23', '0', '138', '181', '110', '214', '147']"
   }
 ]
