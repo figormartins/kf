@@ -18,7 +18,7 @@ class KnightFightBot:
     """Main bot orchestrator"""
     
     def __init__(self, headless: bool = False):
-        self.headless = False
+        self.headless = headless
         self.tracker = PlayerTracker(BotSettings.ATTACK_TRACKER_FILE)
     
     @staticmethod
@@ -59,7 +59,7 @@ class KnightFightBot:
                     player_service.go_to_battlefield()
                     if player_service.wait_timer_if_needed(): continue
 
-                    players = self.tracker.get_players()
+                    players = self.tracker.get_players_available_to_attack()
                     player = players[0] if len(players) > 0 else None
                     if player is None: raise Exception("No players to attack found in tracker.")
 

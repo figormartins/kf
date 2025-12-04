@@ -1,7 +1,7 @@
 
 
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timedelta
 import json
 from pathlib import Path
 from typing import Optional
@@ -44,6 +44,17 @@ class PlayerTracker:
         """Get all tracked players"""
         players_data = self.__load_players()
         return [PlayerRecord.from_dict(p) for p in players_data]
+    
+    def get_players_available_to_attack(self) -> list[PlayerRecord]:
+        """Get players that were attacked more than 12 hours ago"""
+        now = datetime.now()
+        threshold = timedelta(hours=12)
+        
+        all_players = self.get_players()
+        return [
+            p for p in all_players
+            if (now - p.attacked_at) >= threshold
+        ]
     
     def record_player(self, record: PlayerRecord):
         """Record a successful player"""
