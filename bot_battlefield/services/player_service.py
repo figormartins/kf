@@ -84,10 +84,11 @@ class PlayerService:
             button.click()
             return True
         return False
-
-        # text_locator = self.page.locator('.box-bg')
-        # text = "You can only attack the same player once every 12 hours but that player can carry out a counterattack on you!"
-        # if text in text_locator:
+    
+    def is_to_remove_zombie(self) -> bool:
+        text_locator = self.page.locator('.box-bg').inner_text()
+        text = "An error has occurred, please try again!"
+        return text in text_locator
 
     def go_to_battle_reports(self) -> None:
         """Navigate to battlefield attack reports"""

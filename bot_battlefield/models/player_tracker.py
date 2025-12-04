@@ -55,6 +55,15 @@ class PlayerTracker:
         filtered_players.append(record.to_dict())
         self._save_players(filtered_players)
 
+    def remove_player(self, record: PlayerRecord):
+        """Remove a player from tracking"""
+        players = self.__load_players()
+        filtered_players = [
+            p for p in players
+            if p['url'] != record.url
+        ]
+        self._save_players(filtered_players)
+
     def __load_players(self) -> list:
         """Load player records from storage"""
         if not self.storage_path.exists():
