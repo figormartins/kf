@@ -6,6 +6,7 @@ Continuous mode:
 Login → Go to BF → Attacks Zombies using Ids
 """
 import time
+import re
 from datetime import datetime
 from bot_battlefield.config.settings import BotSettings
 from bot_battlefield.models.player_tracker import PlayerTracker
@@ -19,6 +20,22 @@ class KnightFightBot:
     def __init__(self, headless: bool = False):
         self.headless = False
         self.tracker = PlayerTracker(BotSettings.ATTACK_TRACKER_FILE)
+    
+    @staticmethod
+    def extract_player_id(url: str) -> str:
+        """
+        Extract player ID from URL
+        
+        Args:
+            url: URL in format "https://int7.knightfight.moonid.net/battleserver/player/2941436821/"
+            
+        Returns:
+            Player ID as string: "2941436821"
+        """
+        match = re.search(r'/player/(\d+)/?$', url)
+        if match:
+            return match.group(1)
+        raise ValueError(f"Could not extract player ID from URL: {url}")
     
     def run(self) -> None:
         """
@@ -46,12 +63,20 @@ class KnightFightBot:
                     player = players[0] if len(players) > 0 else None
                     if player is None: raise Exception("No players to attack found in tracker.")
 
-                    is_attack_performed = player_service.find_zombie_and_attack_by_id(player.url)
+                    player_id = self.extract_player_id(player.url)
+                    is_attack_performed = player_service.find_zombie_and_attack_by_id(player_id)
                     if is_attack_performed:
                         print("\n" + f"⚔️  Attack performed at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
                         player.attacked_at = datetime.now()
                         self.tracker.record_player(player)
+                        continue
 
+                    if player_service.is_to_remove_zombie():
+                        self.tracker.remove_player(player)
+                        print(f"🗑️  Removed zombie {player.url} from tracker.")
+                        continue
+
+                    print("deu ruim...")
                     #verificar quando o zombie nao existe mais ou ja foi atacado nas ultimas 12h
 
                 except Exception as e:
