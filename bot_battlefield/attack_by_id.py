@@ -82,7 +82,8 @@ class KnightFightBot:
 
                 except StopIteration as si:
                     print(f"ℹ️  {si}")
-                    raise si
+                    print("⏳ Waiting for 10 minutes before next cycle...")
+                    time.sleep(600)  # Wait for 10 minutes before next cycle
                 except Exception as e:
                     print(f"⚠️ Error during battlefield operations: {e}")
 
