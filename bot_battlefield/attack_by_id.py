@@ -60,8 +60,9 @@ class KnightFightBot:
                     if player_service.wait_timer_if_needed(): continue
 
                     players = self.tracker.get_players_available_to_attack()
+                    print(f"ℹ️  Players available to attack: {len(players)}")
                     player = players[0] if len(players) > 0 else None
-                    if player is None: raise Exception("No players to attack found in tracker.")
+                    if player is None: raise StopIteration("No players to attack found in tracker.")
 
                     player_id = self.extract_player_id(player.url)
                     is_attack_performed = player_service.find_zombie_and_attack_by_id(player_id)
@@ -79,6 +80,9 @@ class KnightFightBot:
                     print("deu ruim...")
                     #verificar quando o zombie nao existe mais ou ja foi atacado nas ultimas 12h
 
+                except StopIteration as si:
+                    print(f"ℹ️  {si}")
+                    raise si
                 except Exception as e:
                     print(f"⚠️ Error during battlefield operations: {e}")
 

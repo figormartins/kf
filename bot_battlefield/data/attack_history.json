@@ -1,29 +1,5 @@
 [
   {
-    "name": "\u041a\u043e\u0436\u0430\u0440 \u041b\u0430\u0437\u0430\u0440 VI.",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942409144/",
-    "attacked_at": "2025-12-03T19:25:23.777198",
-    "data": "['41', '~6', '0', '2870', '91', '23', '0', '152', '216', '112', '195', '144']"
-  },
-  {
-    "name": "Pr\u00edncipe Pedro XVI.",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942420329/",
-    "attacked_at": "2025-12-03T19:52:34.230149",
-    "data": "['38', '~6', '0', '2660', '91', '23', '0', '144', '134', '114', '213', '129']"
-  },
-  {
-    "name": "Duke Twinings XI.",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942280760/",
-    "attacked_at": "2025-12-03T19:58:47.224820",
-    "data": "['42', '~6', '0', '2940', '91', '23', '0', '147', '224', '122', '198', '131']"
-  },
-  {
-    "name": "\u0421\u044a\u0434\u0438\u044f \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u044a\u0440 III.",
-    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942352902/",
-    "attacked_at": "2025-12-03T20:09:15.795255",
-    "data": "['38', '~6', '0', '2660', '91', '23', '0', '141', '140', '128', '210', '129']"
-  },
-  {
     "name": "Sklepikarz Sambor IX.",
     "url": "https://int7.knightfight.moonid.net/battleserver/player/2942286483/",
     "attacked_at": "2025-12-03T20:16:13.744872",
@@ -58,6 +34,12 @@
     "url": "https://int7.knightfight.moonid.net/battleserver/player/2942167142/",
     "attacked_at": "2025-12-04T09:55:51.901875",
     "data": "['43', '~6', '0', '3010', '91', '23', '0', '148', '184', '132', '215', '104']"
+  },
+  {
+    "name": "B\u00fcrger von Kradenhaller",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942409144/",
+    "attacked_at": "2025-12-04T08:56:36.712577",
+    "data": "['39', '~6', '0', '2730', '91', '23', '0', '137', '140', '111', '217', '135']"
   },
   {
     "name": "B\u00fcrger von Kradenhaller",
@@ -538,5 +520,29 @@
     "url": "https://int7.knightfight.moonid.net/battleserver/player/2942481213/",
     "attacked_at": "2025-12-04T17:42:37.010144",
     "data": "['43', '~6', '0', '3010', '91', '23', '0', '142', '131', '111', '227', '147']"
+  },
+  {
+    "name": "Pr\u00edncipe Pedro XVI.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942420329/",
+    "attacked_at": "2025-12-04T17:48:09.173706",
+    "data": "['38', '~6', '0', '2660', '91', '23', '0', '144', '134', '114', '213', '129']"
+  },
+  {
+    "name": "Capit\u00e3o Eduardo XII.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942505915/",
+    "attacked_at": "2025-12-04T17:54:56.140430",
+    "data": "['44', '~6', '0', '3080', '91', '23', '0', '142', '152', '130', '222', '146']"
+  },
+  {
+    "name": "Duke Twinings XI.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942280760/",
+    "attacked_at": "2025-12-04T18:00:00.892625",
+    "data": "['42', '~6', '0', '2940', '91', '23', '0', '147', '224', '122', '198', '131']"
+  },
+  {
+    "name": "\u0421\u044a\u0434\u0438\u044f \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u044a\u0440 III.",
+    "url": "https://int7.knightfight.moonid.net/battleserver/player/2942352902/",
+    "attacked_at": "2025-12-04T18:05:05.063249",
+    "data": "['38', '~6', '0', '2660', '91', '23', '0', '141', '140', '128', '210', '129']"
   }
 ]
