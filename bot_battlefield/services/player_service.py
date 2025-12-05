@@ -81,8 +81,14 @@ class PlayerService:
         button = self.page.locator('button')
 
         if button.is_visible():
-            button.click()
-            return True
+            try:
+                button.click()
+                self.verify_if_attack_was_sucessfull()
+                return True
+            except Exception as e:
+                print(f"⚠️ Error during attack on zombie with ID {id}: {e}")
+                return False
+        print(f"⚠️ Error during to find buttom to zimbie {id}")
         return False
     
     def is_to_remove_zombie(self) -> bool:
@@ -142,7 +148,7 @@ class PlayerService:
         if BotSettings.IS_INT_SERVER:
             return ((armor == 91 and one_hand_weapon == 23) or
             (armor == 48 and one_hand_weapon == 65 and
-            (fighting_ability > 200 or stamina > 200 or dexterity > 200 or strength > 200))) and parry <= 150
+            (fighting_ability > 200 or stamina > 200 or dexterity > 200 or strength > 200))) and parry <= 154
         
         
         return ((armor == 91 and one_hand_weapon == 23) or
@@ -181,7 +187,7 @@ class PlayerService:
                 attack_btn_locator = enemy.locator('form .fsattackbut')
                 attack_btn_locator.evaluate(scroll_to_locator)
                 attack_btn_locator.click()
-                expect(self.page.locator('.batrep-grid3')).to_be_visible(timeout=BotSettings.LONG_WAIT)
+                self.verify_if_attack_was_sucessfull()
                 
                 if BotSettings.IS_INT_SERVER:
                     self.tracker.record_player(
@@ -201,6 +207,9 @@ class PlayerService:
 
             count += 1
         return False
+
+    def verify_if_attack_was_sucessfull(self):
+        expect(self.page.locator('.batrep-grid3')).to_be_visible(timeout=BotSettings.LONG_WAIT)
 
     def wait_timer_if_needed(self) -> bool:
         """Wait if timer is active on battlefield and return True if waited"""
