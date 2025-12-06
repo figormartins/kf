@@ -147,7 +147,7 @@ class PlayerService:
         
         if BotSettings.IS_INT_SERVER:
             return ((armor == 91 and one_hand_weapon == 23) or
-            (armor == 48 and one_hand_weapon == 65 and
+            ((armor == 48 and one_hand_weapon == 65) and
             (fighting_ability > 200 or stamina > 200 or dexterity > 200 or strength > 200))) and parry <= 154
         
         
