@@ -77,6 +77,12 @@ class KnightFightBot:
                         print(f"🗑️  Removed zombie {player.url} from tracker.")
                         continue
 
+                    if player_service.is_already_attacked():
+                        print(f"⏳ Zombie {player.url} was already attacked in the last 12 hours. Skipping.")
+                        player.attacked_at = datetime.now()
+                        self.tracker.record_player(player)
+                        continue
+
                     print("deu ruim...")
                     #verificar quando o zombie nao existe mais ou ja foi atacado nas ultimas 12h
 

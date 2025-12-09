@@ -7,6 +7,7 @@ import re
 from bot_battlefield.config.settings import BotSettings
 from bot_battlefield.models.player_tracker import PlayerRecord, PlayerTracker
 from playwright.sync_api import Page, expect
+from shared.service.screenshot_manager_service import ScreenshotManager
 
 
 class PlayerService:
@@ -15,6 +16,7 @@ class PlayerService:
     def __init__(self, page: Page):
         self.page = page
         self.tracker = PlayerTracker(BotSettings.ATTACK_TRACKER_FILE)
+        self.screenshot = ScreenshotManager(BotSettings.DATA_DIR)
 
     def __navigate_to_login(self) -> None:
         """Navigate to login page"""
@@ -62,9 +64,13 @@ class PlayerService:
         print("Navigating to battlefield page...")
         self.page.wait_for_load_state('load')
         if not "battleserver" in self.page.url:
-            print("With not in battleserver, navigating there...")
-            self.page.locator('#content > nav > ul:nth-child(2) > li:nth-child(2) > a').click()
-            self.page.wait_for_load_state('networkidle')
+            try:
+                print("With not in battleserver, navigating there...")
+                self.page.locator('#content > nav > ul:nth-child(2) > li:nth-child(2) > a').click()
+                self.page.wait_for_load_state('networkidle')
+            except Exception as e:
+                self.screenshot.capture(self.page, str(datetime.now().microsecond) + "_not_in_battleserver.png")
+                raise StopIteration(f"⚠️ Error navigating to battlefield: {e}")
         
         expect(self.page).to_have_url(re.compile(".*battleserver"))
         self.page.locator('#content > nav > ul:nth-child(1) > li:nth-child(2) > a').click()
@@ -93,7 +99,13 @@ class PlayerService:
     
     def is_to_remove_zombie(self) -> bool:
         text_locator = self.page.locator('.box-bg').inner_text()
-        text = "An error has occurred, please try again!"
+        text_error = "An error has occurred, please try again!"
+        text_session_ended = "This opponent has escaped your attack because his battle session just ended!"
+        return text_error in text_locator or text_session_ended in text_locator
+    
+    def is_already_attacked(self) -> bool:
+        text_locator = self.page.locator('.box-bg').inner_text()
+        text = "You can only attack the same player once every 12 hours but that player can carry out a counterattack on you!"
         return text in text_locator
 
     def go_to_battle_reports(self) -> None:
