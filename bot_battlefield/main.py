@@ -25,33 +25,36 @@ class KnightFightBot:
         Returns:
             BotSession with execution results
         """
-        
-        with sync_playwright() as p:
-            # Launch browser
-            browser = p.chromium.launch(headless=self.headless, executable_path=None)
-            page = browser.new_page()
-            
-            # Initialize services
-            player_service = PlayerService(page)
-            player_service.login_player()
+        while True:
+            with sync_playwright() as p:
+                # Launch browser
+                browser = p.chromium.launch(headless=self.headless, executable_path=None)
+                page = browser.new_page()
+                
+                # Initialize services
+                player_service = PlayerService(page)
+                player_service.login_player()
 
-            while True:
-                try:
-                    player_service.go_to_battlefield()
-                    if player_service.wait_timer_if_needed(): continue
-                    start_time = time.perf_counter()
+                while True:
+                    try:
+                        player_service.go_to_battlefield()
+                        if player_service.wait_timer_if_needed(): continue
+                        start_time = time.perf_counter()
 
-                    while True:
-                        is_attack_performed = player_service.find_zombies_and_attack()
+                        while True:
+                            is_attack_performed = player_service.find_zombies_and_attack()
 
-                        if is_attack_performed:
-                            print("\n" + f"⚔️  Attack performed at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-                            end_time = time.perf_counter()
-                            request_duration = end_time - start_time
-                            print(f"⏰ Attack to zombie took {request_duration:.2f} seconds.")
-                            break
-                except Exception as e:
-                    print(f"⚠️ Error during battlefield operations: {e}")
+                            if is_attack_performed:
+                                print("\n" + f"⚔️  Attack performed at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+                                end_time = time.perf_counter()
+                                request_duration = end_time - start_time
+                                print(f"⏰ Attack to zombie took {request_duration:.2f} seconds.")
+                                break
+                    except StopIteration as si:
+                        print(si)
+                        break
+                    except Exception as e:
+                        print(f"⚠️ Error during battlefield operations: {e}")
 
 
 def main():
