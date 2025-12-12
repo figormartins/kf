@@ -16,5 +16,50 @@
     "email": "megan.washington@jones.com",
     "username": "megan.washington",
     "password": "megan.washington@jones.com"
+  },
+  {
+    "opponent_id": "522001088",
+    "timestamp": "2025-12-12T11:55:43.727576",
+    "player_name": "OliverShadowcaster653",
+    "attack_successful": true,
+    "email": "john.williams@grant.gov",
+    "username": "john.williams",
+    "password": "john.williams@grant.gov"
+  },
+  {
+    "opponent_id": "522001088",
+    "timestamp": "2025-12-12T12:55:45.952357",
+    "player_name": "OliverBlackwood35865",
+    "attack_successful": true,
+    "email": "tyler.massey@best-phillips.net",
+    "username": "tyler.massey",
+    "password": "tyler.massey@best-phillips.net"
+  },
+  {
+    "opponent_id": "522001088",
+    "timestamp": "2025-12-12T13:55:47.724601",
+    "player_name": "BedivereStonemace8343",
+    "attack_successful": true,
+    "email": "jason.roman@howell.net.us",
+    "username": "jason.roman",
+    "password": "jason.roman@howell.net.us"
+  },
+  {
+    "opponent_id": "522001088",
+    "timestamp": "2025-12-12T14:55:49.144772",
+    "player_name": "ErikStormbringer61947",
+    "attack_successful": true,
+    "email": "victoria.preston@lowery.net.uk",
+    "username": "victoria.preston",
+    "password": "victoria.preston@lowery.net.uk"
+  },
+  {
+    "opponent_id": "522001088",
+    "timestamp": "2025-12-12T15:55:50.884863",
+    "player_name": "MordredStormbringer54293",
+    "attack_successful": true,
+    "email": "angelica.forbes@chaney.com",
+    "username": "angelica.forbes",
+    "password": "angelica.forbes@chaney.com"
   }
 ]
