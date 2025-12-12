@@ -97,6 +97,25 @@ class PlayerService:
         print(f"⚠️ Error during to find buttom to zimbie {id}")
         return False
     
+    def find_player_and_attack_by_id(self, id: str) -> bool:
+        """Go to player attack page and attack"""
+        print("Navigating to player page to attack...")
+        
+        self.page.goto(f"{BotSettings.BASE_URL}/raubzug/gegner/?searchuserid={id}")
+        self.page.wait_for_load_state('load')
+        button = self.page.locator('button')
+
+        if button.is_visible():
+            try:
+                button.click()
+                self.verify_if_attack_was_sucessfull()
+                return True
+            except Exception as e:
+                print(f"⚠️ Error during attack on player with ID {id}: {e}")
+                return False
+        print(f"⚠️ Error during to find buttom to zimbie {id}")
+        return False
+    
     def is_to_remove_zombie(self) -> bool:
         text_locator = self.page.locator('.box-bg').inner_text()
         text_error = "An error has occurred, please try again!"
@@ -107,6 +126,12 @@ class PlayerService:
         text_locator = self.page.locator('.box-bg').inner_text()
         text = "You can only attack the same player once every 12 hours but that player can carry out a counterattack on you!"
         return text in text_locator
+    
+    def get_last_attack_time_from_zombie(self) -> datetime | None:
+        ".box-bg table tr td" ## get first td with "Last attack"
+        ## estará dessa forma: on 2025-12-09 at 19:46:23
+        rows = self.page.locator('.box-bg table tr td').all()
+        datetime.now()
 
     def go_to_battle_reports(self) -> None:
         """Navigate to battlefield attack reports"""
@@ -160,7 +185,7 @@ class PlayerService:
         if BotSettings.IS_INT_SERVER:
             return ((armor == 91 and one_hand_weapon == 23) or
             ((armor == 48 and one_hand_weapon == 65) and
-            (fighting_ability > 200 or stamina > 200 or dexterity > 200 or strength > 200))) and parry <= 154
+            (fighting_ability > 200 or stamina > 200 or dexterity > 200 or strength > 200))) and parry <= 188
         
         
         return ((armor == 91 and one_hand_weapon == 23) or
