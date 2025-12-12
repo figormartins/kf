@@ -62,13 +62,21 @@ class CredentialsGenerator:
         fake = Faker()
         list_of_domains = (
         'com',
-        'com.br',
+        'com.uk',
         'net',
-        'net.br',
+        'net.uk',
         'org',
-        'org.br',
+        'org.uk',
         'gov',
-        'gov.br'
+        'gov.uk',
+        'io',
+        'tech',
+        'dev',
+        'app',
+        'com.us',
+        'net.us',
+        'org.us',
+        'gov.us'
     )
         # Primeiro nome
         first_name = fake.first_name()
