@@ -44,54 +44,57 @@ class KnightFightBot:
         Returns:
             BotSession with execution results
         """
-        
-        with sync_playwright() as p:
-            # Launch browser
-            browser = p.chromium.launch(headless=self.headless, executable_path=None)
-            page = browser.new_page()
-            
-            # Initialize services
-            player_service = PlayerService(page)
-            player_service.login_player()
+        while True:
+            with sync_playwright() as p:
+                # Launch browser
+                browser = p.chromium.launch(headless=self.headless, executable_path=None)
+                page = browser.new_page()
+                
+                # Initialize services
+                player_service = PlayerService(page)
+                player_service.login_player()
 
-            while True:
-                try:
-                    player_service.go_to_battlefield()
-                    if player_service.wait_timer_if_needed(): continue
+                while True:
+                    try:
+                        player_service.go_to_battlefield()
+                        if player_service.wait_timer_if_needed(): continue
 
-                    players = self.tracker.get_players_available_to_attack()
-                    print(f"ℹ️  Players available to attack: {len(players)}")
-                    player = players[0] if len(players) > 0 else None
-                    if player is None: raise StopIteration("No players to attack found in tracker.")
+                        players = self.tracker.get_players_available_to_attack()
+                        print(f"ℹ️  Players available to attack: {len(players)}")
+                        player = players[0] if len(players) > 0 else None
+                        if player is None: raise ValueError("No players to attack found in tracker.")
 
-                    player_id = self.extract_player_id(player.url)
-                    is_attack_performed = player_service.find_zombie_and_attack_by_id(player_id)
-                    if is_attack_performed:
-                        print("\n" + f"⚔️  Attack performed at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-                        player.attacked_at = datetime.now()
-                        self.tracker.record_player(player)
-                        continue
+                        player_id = self.extract_player_id(player.url)
+                        is_attack_performed = player_service.find_zombie_and_attack_by_id(player_id)
+                        if is_attack_performed:
+                            print("\n" + f"⚔️  Attack performed at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+                            player.attacked_at = datetime.now()
+                            self.tracker.record_player(player)
+                            continue
 
-                    if player_service.is_to_remove_zombie():
-                        self.tracker.remove_player(player)
-                        print(f"🗑️  Removed zombie {player.url} from tracker.")
-                        continue
+                        if player_service.is_to_remove_zombie():
+                            self.tracker.remove_player(player)
+                            print(f"🗑️  Removed zombie {player.url} from tracker.")
+                            continue
 
-                    if player_service.is_already_attacked():
-                        print(f"⏳ Zombie {player.url} was already attacked in the last 12 hours. Skipping.")
-                        player.attacked_at = datetime.now()
-                        self.tracker.record_player(player)
-                        continue
+                        if player_service.is_already_attacked():
+                            print(f"⏳ Zombie {player.url} was already attacked in the last 12 hours. Skipping.")
+                            player.attacked_at = datetime.now()
+                            self.tracker.record_player(player)
+                            continue
 
-                    print("deu ruim...")
-                    #verificar quando o zombie nao existe mais ou ja foi atacado nas ultimas 12h
+                        print("deu ruim...")
+                        #verificar quando o zombie nao existe mais ou ja foi atacado nas ultimas 12h
 
-                except StopIteration as si:
-                    print(f"ℹ️  {si}")
-                    print("⏳ Waiting for 1 minute before next cycle...")
-                    time.sleep(60)  # Wait for 1 minute before next cycle
-                except Exception as e:
-                    print(f"⚠️ Error during battlefield operations: {e}")
+                    except ValueError as ve:
+                        print(f"ℹ️  {ve}")
+                        print("⏳ Waiting for 1 minute before next cycle...")
+                        time.sleep(60)  # Wait for 1 minute before next cycle
+                    except StopIteration as si:
+                        print(si)
+                        break
+                    except Exception as e:
+                        print(f"⚠️ Error during battlefield operations: {e}")
 
 
 def main():
