@@ -111,9 +111,9 @@ class PlayerService:
                 self.verify_if_attack_was_sucessfull()
                 return True
             except Exception as e:
-                print(f"⚠️ Error during attack on player with ID {id}: {e}")
+                print(f"⚠️ Error during attack on player with ID {id}: {e}: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
                 return False
-        print(f"⚠️ Error during to find buttom to zimbie {id}")
+        print(f"⚠️ Error during to find buttom to player {id} {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         return False
     
     def is_to_remove_zombie(self) -> bool:
@@ -185,7 +185,7 @@ class PlayerService:
         if BotSettings.IS_INT_SERVER:
             return ((armor == 91 and one_hand_weapon == 23) or
             ((armor == 48 and one_hand_weapon == 65) and
-            (fighting_ability > 200 or stamina > 200 or dexterity > 200 or strength > 200))) and parry <= 188
+            (fighting_ability > 200 or stamina > 200 or dexterity > 200 or strength > 200))) and parry <= 203
         
         
         return ((armor == 91 and one_hand_weapon == 23) or
