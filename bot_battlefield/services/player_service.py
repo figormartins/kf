@@ -179,9 +179,10 @@ class PlayerService:
         fighting_ability = int(status[10])
         parry = int(status[11])
 
-        # print(f"Level: {lvl}, Eficiency: {eficiency}, Armor: {armor}, 1H Weapon: {one_hand_weapon}, 2H Weapon: {two_hand_weapon}")
-        # print(f"Status - Strength: {strength}, Stamina: {stamina}, Dexterity: {dexterity}, Fighting Ability: {fighting_ability}, Parry: {parry}")
-        
+        print(f"Level: {lvl}, Eficiency: {eficiency}, Armor: {armor}, 1H Weapon: {one_hand_weapon}, 2H Weapon: {two_hand_weapon}")
+        print(f"Status - Strength: {strength}, Stamina: {stamina}, Dexterity: {dexterity}, Fighting Ability: {fighting_ability}, Parry: {parry}")
+        return lvl < 20 and two_hand_weapon == 0 and armor == 36 and one_hand_weapon == 3
+
         if BotSettings.IS_INT_SERVER:
             return ((armor == 91 and one_hand_weapon == 23) or
             ((armor == 48 and one_hand_weapon == 65) and
