@@ -59,7 +59,7 @@ class KnightFightBot:
 
             while True:
                 try:
-                    player_id = "522000401" #### TARGET OPPONENT ID
+                    player_id = "522000401" #### Goldilocks
                     is_attack_performed = player_service.find_player_and_attack_by_id(player_id)
                     if is_attack_performed:
                         print("\n" + f"⚔️  Attack performed at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
